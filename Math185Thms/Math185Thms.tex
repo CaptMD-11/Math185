@@ -43,7 +43,94 @@
 \date
 
 \begin{enumerate}
-    \item 
+    \item \textbf{Prop. } Let $z_1,z_2 \in \mathbb{C}$. Then $|z_1z_2| = |z_1||z_2|$ and $\arg(z_1z_2) = \arg(z_1) + \arg(z_2) \Mod{2\pi}$. 
+    \item \textbf{Theorem. } $\mathbb{C}$ is a field. 
+    \item \textbf{De Moivre's Formula. } If $z = r(\cos\theta + i\sin\theta)$ and $n \in \mathbb{Z}_{>0}$, then $z^n = r^n(\cos n\theta + i\sin n\theta)$. 
+    \item \textbf{Prop. } Let $z,w \in \mathbb{C}$. Then: 
+    \begin{enumerate}
+        \item $\overline{z+w} = \overline{z} + \overline{w}$. 
+        \item $\overline{zw} = \overline{z} \cdot \overline{w}$. 
+        \item $\overline{\left(\frac{z}{w}\right)} = \frac{\overline{z}}{\overline{w}}$ (with $w \neq 0$). 
+        \item $z\overline{z} = |z|^2$. If $z \neq 0$, then $z^{-1} = \frac{\overline{z}}{|z|^2}$. 
+        \item If $z = \overline{z}$, then $z \in \mathbb{R}$ and so $z = \textrm{Re}(z)$. 
+        \item $\textrm{Re}(z) = \frac{z+\overline{z}}{2}$ and $\textrm{Im}(z) = \frac{z-\overline{z}}{2i}$. 
+        \item $\overline{\overline{z}} = z$. 
+    \end{enumerate}
+    \item \textbf{Prop. } Let $z,w \in \mathbb{C}$. Then: 
+    \begin{enumerate}
+        \item $|z| \geq 0$ and if $|z| = 0$, then $z=0$. 
+        \item $|zw| = |z||w|$. 
+        \item If $w \neq 0$, then $\left|\frac{z}{w}\right| = \frac{|z|}{|w|}$. 
+        \item $|\textrm{Re}(z)| \leq |z|$ and $|\textrm{Im}(z)| \leq |z|$. 
+        \item $|\overline{z}| = |z|$. 
+        \item $|z+w| \leq |z| + |w|$. 
+        \item $||z| - |w|| \leq |z-w|$. 
+        \item $|z_1w_1 + \dots + z_nw_n| \leq \sqrt{|z_1|^2 + \dots + |z_n|^2}\sqrt{|w_1|^2 + \dots + |w_n|^2}$. 
+    \end{enumerate}
+    \item \textbf{Prop. } Fix $r>0$ and $z \in \mathbb{C}$. The open disk $D_{\epsilon}(z_0)$ is an open set. 
+    \item \textbf{Prop. } The following are true: 
+    \begin{enumerate}
+        \item $\mathbb{C}$ is open. 
+        \item The empty set $\phi$ is open. 
+        \item The union of open sets is open. 
+        \item The intersection of finitely many open sets is open. 
+    \end{enumerate}
+    \item \textbf{Prop. } Limits are unique (if they exist). 
+    \item \textbf{Prop. } If $\lim_{z \to z_0} f(z) = a$ and $\lim_{z \to z_0} g(z) = b$, then: 
+    \begin{enumerate}
+        \item $\lim_{z \to z_0} (f(z) + g(z)) = a+b$. 
+        \item $\lim_{z \to z_0} ((f(z)g(z))) = ab$. 
+        \item $\lim_{z \to z_0} \left(\frac{f(z)}{g(z)}\right) = \frac{a}{b}$ (with $b \neq 0$). 
+    \end{enumerate}
+    \item \textbf{Prop. } The following are true: 
+    \begin{enumerate}
+    \item If $\lim_{z \to z_0} f(z) = a$ and $h$ is continuous at $a$, then $\lim_{z \to z_0} h(f(z)) = h(a)$. 
+    \item If $f$ is continuous on an open set $\Omega \subseteq \mathbb{C}$, and $h$ is continuous on $f(\Omega)$, then $h \circ f$ is continuous on $\Omega$, with $(h \circ f)(z) = h(f(z))$. 
+    \end{enumerate}
+    \item \textbf{Prop. } The following are true: 
+    \begin{enumerate}
+        \item The empty set $\phi$ is closed. 
+        \item $\mathbb{C}$ is closed. 
+        \item The intersection of a collection of closed sets is closed. 
+        \item The union of finitely many closed sets is closed. 
+    \end{enumerate}
+    \item \textbf{Prop. } A set $F$ is closed iff whenever $z_1,z_2,z_3,\dots$ is a sequence of points in $F$ converging to $\lim_{k \to \infty} z_k = w$, then $w \in F$. 
+    \item \textbf{Prop. } If $f: \mathbb{C} \to \mathbb{C}$, TFAE: 
+    \begin{enumerate}
+        \item $f$ is continuous. 
+        \item If $F \subseteq \mathbb{C}$ is closed, then $f^{-1}(F)$ is closed. 
+        \item If $\Omega$ is open, then $f^{-1}(\Omega)$ is also open. 
+    \end{enumerate}
+    \item \textbf{Prop. (Heine-Borel + Sequential Compactness). } For $K \subseteq \mathbb{C}$, TFAE: 
+    \begin{enumerate}
+        \item $K$ is compact. 
+        \item $K$ is closed and bounded. 
+        \item Every sequence of points in $K$ has a convergent subsequence converging in $K$ (sequentially compact). 
+    \end{enumerate} 
+    \item \textbf{Prop. } If $K$ is compact and $f: K \to \mathbb{C}$ is continuous, then the image $f(K)$ is compact. 
+    \item \textbf{Theorem (Extreme Value Theorem). } If $K$ is compact and $f: K \to \mathbb{R}$ is continuous, then $f$ attains its minimum and maximum. 
+    \item \textbf{Stereographic Projection / Riemann Sphere. } Identify the plane $\overline{\mathbb{C}} = S^2 = \{(x,y,z) \in \mathbb{R}^3 \mid x^2 + y^2 + z^2 = 1\}$. If $f: \mathbb{C} \to S^2 \setminus \{N\}$, then we have $(u,v) \mapsto \frac{1}{1 + u^2 + v^2}(2u,2v,-1 + u^2 + v^2)$ is a homeomorphism (is continuous with continuous inverse) $f^{-1}: S^2 \setminus \{N\} \to \mathbb{C}$ with $(x,y,z) \mapsto \left(\frac{x}{1-z}, \frac{y}{1-z}\right)$. 
+    \item \textbf{Prop. (Uniform Convergence). } If $f_n \to f$ uniformly and each $f_n$ is continuous, then $f$ is continuous. 
+    \item \textbf{Euler's Formula. } $e^{iz} = \cos z + i\sin z$ for all $z \in \mathbb{C}$. 
+    \item \textbf{Theorem. } $\cos z = \frac{e^{iz} + e^{-iz}}{2}$ and $\sin z = \frac{e^{iz} - e^{-iz}}{2i}$. 
+    \item \textbf{Properties of $e$. } Let $x,y \in \mathbb{R}$ and $z,w \in \mathbb{C}$. Then: 
+    \begin{enumerate}
+        \item $e^{z + w} = e^ze^w$. 
+        \item $|e^{x + iy}| = |e^xe^{iy}| = |e^x||e^{iy}| = e^x$. 
+        \item $\arg(e^{x + iy}) = y \Mod{2\pi}$. 
+        \item $e^z \neq 0$ for all $z \in \mathbb{C}$. 
+        \item $e^z = 1$ iff $z = 2\pi in$ for some $n \in \mathbb{Z}$. 
+        \item $e^z = e^{z + 2\pi ni}$. 
+    \end{enumerate} 
+    \item \textbf{Prop. (Chain Rule). } Let $\Omega, A \subseteq \mathbb{C}$ be open sets, and let $f: \Omega \to A$, $g: A \to \mathbb{C}$ be holomorphic functions. Then, $g \circ f: \Omega \to \mathbb{C}$ is holomorphic and $\frac{d}{dz}(f \circ g)(z) = \frac{dg}{df}(f(z)) \cdot \frac{df}{dz}(z)$. 
+    \item \textbf{Prop. } Let $f: \Omega \to \mathbb{C}$ be holomorphic. Then $f: \Omega \to \mathbb{R}^2$ is real differentiable at all $(x,y) \in \Omega$. 
+    \item \textbf{Cauchy-Riemann Equations. } Let $\Omega$ be an open set in $\mathbb{C}$ and let $f: \Omega \to \mathbb{C}$ be given by $f(x,y) = u(x,y) + iv(x,y)$. Then: 
+    \begin{enumerate}
+        \item $f'(z)$ exists at $z \in \Omega$ iff $f$ is real differentiable and $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$ and $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$ (these are the Cauchy-Riemann equations). 
+        \item $f(z)$ is holomorphic on $\Omega$ iff partials are continuous and satisfy the CR equations. 
+        \item If $f'(z_0)$ exists, then $f'(z_0) = \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x} = \frac{\partial f}{\partial x} = \frac{\partial u}{\partial y} - i\frac{\partial v}{\partial y} = \frac{1}{i}\frac{\partial f}{\partial y}$. 
+    \end{enumerate}
+    \item \textbf{Inverse Function Theorem for $\mathbb{R}^2$. } If $f: \Omega \to \mathbb{R}^2$ is continuously differentiable and the Jacobian $Df(z_0)$ has $\det(Df(z_0)) \neq 0$, then there are neighborhoods $U \ni z_0$ and $V \ni f(z_0)$ such that $f: U \to V$is bijective with continuously differentiable $f^{-1}: V \to U$ such that $Df^{-1}(z_0) = [Df(z_0)]^{-1}$, which is the inverse matrix of $Df(z_0)$. 
 \end{enumerate}
 
 
