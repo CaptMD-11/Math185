@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage[linguistics]{forest}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[cal=esstix,frak=euler,scr=boondox,bb= pazo]{mathalfa}
+\usepackage{graphicx}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\allowdisplaybreaks
+\allowbreak
+
+% no indent (by default)
+\setlength\parindent{0pt}
+
+% Definitions
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newcounter{customDef}
+\renewcommand{\thecustomDef}{\arabic{customDef}}
+
+% Theorems
+\newcounter{customThm}
+\renewcommand{\thecustomThm}{\arabic{customThm}}
+\newtheorem{theorem}[customThm]{Theorem}
+
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\begin{document}
+
+
+\textbf{Problem 5.}
+\\
+Show that if $f(z)$ has an essential singularity at $z_0$, then $e^{f(z)}$ also has an essential singularity at $z_0$.
+\\
+\\
+\textit{Solution:} We aim to show that $e^{f(z)}$ has neither a pole nor a removable singularity at $z_0$. Put $g(z) = e^{f(z)}$. First, suppose $g$ has a pole at $z_0$. We utilize the following result.
+
+\renewcommand{\thecustomThm}{1}
+\begin{theorem}
+$z_0$ is a pole of $f$ if and only if there is a punctured disc $D_r(z_0)\backslash\{z_0\}$ on which $|f|$ is bounded below and unbounded above. 
+\end{theorem}
+
+Then, by Theorem 1, there is a punctured disc $D_r(z_0)\backslash\{z_0\}$ on which $f$ is bounded above and unbounded below. Choose a point $z_1 \in D_r(z_0)\backslash\{z_0\}$ with $|z_0 - z_1|$ sufficiently small. Then, since Thus, $z_0$ is not a pole of $g$. Now, suppose $g$ has a removable singularity at $z_0$. From the hint, we have that a singularity $z_0$ is removable if and only if $|f|$ is bounded on some $D_r(z_0)$. By assumption, $|g|$ is bounded on some $D_r(z_0)$. Then, 
+
+ 
+\end{document}

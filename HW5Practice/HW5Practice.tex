@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage[linguistics]{forest}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[cal=esstix,frak=euler,scr=boondox,bb= pazo]{mathalfa}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\graphicspath{{./images/}}
+\allowdisplaybreaks
+\allowbreak
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedconjecture}{Distinct Factorizations Conjecture}
+\newtheorem{conjecture}{Conjecture}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\newcounter{customDef}
+\renewcommand{\thecustomDef}{\arabic{customDef}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\begin{document}
+\title{Math 185 - Homework 5 Practice}
+\author{}
+\date{}
+\maketitle
+\date
+
+Problem 1: \\
+\begin{enumerate}[(a)]
+    \item Recall that $F(z) := \int_{\gamma} \frac{dw}{w}$. To show that $\Omega$ is simply connected, we construct a homotopy by the following. $\gamma[0,1] \to \Omega$ is any curve with $\gamma(0) = 1$ and $\gamma(1) = z$. Then, let $\gamma$ be defined as in the previous sentence. Then construct the homotopy $H_s(t) = (1-s)\gamma(t) + s(1)$, where $s,t \in [0,1)$. With this homotopy, we observe that we begin with any curve in $\Omega$, and as $s$ goes from 0 to 1, $H_s(t)$ continuously deforms the curve into the point $1 \in \Omega$. 
+    \item To show that $F$ is well-defined, we aim to prove that $F$ is completely dependent on $z$, or in other words, $F$ is path-independent. So, let $\gamma_0, \gamma_1$ be two such paths in $\Omega$ with $\gamma_0(0) = \gamma_1(0) = 1$ and $\gamma_0(1)=\gamma_1(1) = z$. Then, show that $\int_{\gamma_0} \frac{dw}{w} = \int_{\gamma_1} \frac{dw}{w}$, which implies $\int_{\gamma_0 - \gamma_1} \frac{dw}{w}$. We have that the path $\gamma_0 - \gamma_1$ is a closed curve (loop) in $\Omega$. Thus, by a corollary to the Cauchy-Goursat theorem, every loop $\Gamma$ in a simply connected $\Beta$ has $\int_{\Gamma} f dz = 0$. Thus, we have that $\int_{\gamma_0 - \gamma_1} \frac{dw}{w} = 0$, since $\frac{1}{w}$ is holomorphic on the simply connected $\Omega$. Thus, we have that $\int_{\gamma_0} \frac{dw}{w} = \int_{\gamma_1} \frac{dw}{w}$, and so $F$ is well-defined. 
+    \item Let $\tilde{\Omega} = \mathbb{C} \setminus \{0\}$. Then, the function $F$ on $\tilde{\Omega}$ is not a well-defined function, since we can consider the following two path integrals. Define $\gamma_0(t) = e^{it}$ and $\gamma_1(t) = e^{-it}$ for $t \in [0,1)$. Then, the integrals result in $i\pi$ and $-i\pi$, respectively. Since $i\pi = -i\pi$, $F$ is not path-independent, so therefore, it follows that $F$ is not well-defined on $\tilde{\Omega}$. 
+    \item $\tilde{\Omega}$ is not simply connected, since we can consider the unit circle about the origin, which is homotopic to the point 0, the origin. However, since $0 \notin \tilde{\Omega}$, thus, we have that $\tilde{\Omega}$ is not simply connected. 
+\end{enumerate}
+\\
+
+Problem 2: \\
+
+
+
+\end{document}

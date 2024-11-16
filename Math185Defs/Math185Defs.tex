@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage[linguistics]{forest}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{blindtext}
+% \usepackage[cal=esstix,frak=euler,scr=boondox,bb= pazo]{mathalfa}
+% the following 2 packages are used for changing the font. 
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\allowdisplaybreaks
+\allowbreak
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedconjecture}{Distinct Factorizations Conjecture}
+\newtheorem{conjecture}{Conjecture}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Res}{Res}
+\newcounter{customDef}
+\renewcommand{\thecustomDef}{\arabic{customDef}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\begin{document}
+\title{Math 185 Definitions}
+\author{}
+\date{}
+\maketitle
+\date
+
+\begin{enumerate}
+    \item \textbf{Complex Numbers, $\mathbb{C}$. } The set of complex numbers $\mathbb{C}$ is the real vector space $\mathbb{R}^2$ with the properties $(x_1,y_1) + (x_2,y_2) + (x_1+x_2,y_1+y_2)$ and $a(x_1,y_1) = (ax_1,ay_1)$ and we write $z = x+iy = (x,y)$ for any $z \in \mathbb{C}$. 
+    \item \textbf{Polar Form. } Let $z = a+bi \in \mathbb{C}$. Then norm (a.k.a. modulus, absolute value) of $z \in \mathbb{C}$ is written $|z| \in \mathbb{R}$ and is defined by $|z| = \sqrt{a^2 + b^2}$. Then, define the argument of $z$ as $\arg(z) = \theta \in [0,2\pi)$ as the angle $z$ makes with the real axis. Then, the polar form of $z$ is written as $z = |z| \left(\cos\theta + i\sin\theta\right)$. 
+    \item \textbf{Rectangular form. } If $z \in \mathbb{C}$ is written as $z = x+iy$, with $x,y \in \mathbb{R}$, then $z$ is written in rectangular form. 
+    \item \textbf{Complex Conjugate. } If $z = a+ib$, then its complex conjugate is $\overline{z} = a-ib$. 
+    \item \textbf{Open Sets. } A set $\Omega \subseteq \mathbb{C}$ is called open if for each $z_0 \in \mathbb{C}$, there is an $\epsilon > 0$ such that $D_{\epsilon}(z_0) \subseteq \Omega$. 
+    \item \textbf{Neighborhoods. } An $\epsilon$-neighborhood of a point $z_0$ is a set $N$ which contains some open disk $D_{\epsilon}(z_0)$. 
+    \item \textbf{$\epsilon$-deleted neighborhoods. } An $\epsilon$-deleted neighborhood of a point $z_0$ is a set $N$ which contains a "punctured" open disk $D_{\epsilon}(z_0) \setminus \{z_0\}$.
+    \item \textbf{Limits. } Let $f: \Omega \to \mathbb{C}$ where $\Omega$ is an $r$-deleted neighborhood of a point $z_0$. Then $f$ has a limit as $z \to z_0$, and write $\lim_{z \to z_0} f(z) = a$. This means that for every $\epsilon > 0$ there exists a $\delta > 0$ such that if $z \in \Omega$ has $|z-z_0| < \delta$, then $|f(z) - a| < \epsilon$. 
+    \item \textbf{Continuity. } Let $\Omega \subseteq \mathbb{C}$ be an open set. Then $f: \Omega \to \mathbb{C}$ is continuous at a point $z_0 \in \Omega$ if $\lim_{z \to z_0} f(z) = f(z_0)$. 
+    \item \textbf{Closed Sets. } A subset $F \subseteq \mathbb{C}$ is called closed if its complement $\mathbb{C} \setminus F$ is open. 
+    \item \textbf{Compact. } A subset $K \subseteq \mathbb{C}$ is called compact if every open cover of $K$ has a finite subcover. 
+    \item \textbf{Uniform Convergence. } A sequence of functions $f_n: \Omega \to \mathbb{C}$ converges uniformly to a function $f: \Omega \to \mathbb{C}$ if for all $\epsilon > 0$ there exists an $N \in \mathbb{N}$ such that if $n \geq N$, then $|f_n(z) - f(z)| < \epsilon$ for all $z \in \Omega$. 
+    \item \textbf{Derivative. } Let $f: \Omega \to \mathbb{C}$, where $\Omega$ is a neighborhood of $z_0$. The derivative of $f$ at $z_0$ is the limit $f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}$. We call $f$ \textbf{complex differentiable} at $z_0$ if this limit exists. If $f'(z_0)$ exists for all $z_0 \in \Omega$, we call $f$ \textbf{holomorphic} on $\Omega$. 
+    \item \textbf{Branch of the Argument. } This is a choice of interval (here, $[-\pi,\pi)$ or $[a,a+2\pi)$). 
+    \item \textbf{Principal Branch of the Logarithm. } Pick a branch $[a, a+2\pi)$. Then, $\log: \mathbb{C} \setminus \{0\} \to \mathbb{R} \times i[a,a+2\pi)$ is defined by $\log z = \log |z| + i\arg z$, where $\arg z \in [a, a+2\pi)$. We call the branch $[-\pi,\pi)$ the principal branch. 
+    \item \textbf{Exponentiation of complex numbers $a,b$. } Choose a branch of $\log$, with $\log: \Omega \to \mathbb{C}$ and $a,b \in \mathbb{C}$. Then, define $a^b := e^{b\log a}$. 
+    \item \textbf{Contour Integral. } Suppose $f$ is continuous on an open set $\Omega$ and $\gamma: [a,b] \to \Omega$ is a smooth curve. Then the contour integral of $f$ along $\gamma$ is defined to be $\int_{\gamma} f := \int_{\gamma} f(z) dz := \int_{a}^{b}f(\gamma(t))\gamma'(t) dt$. 
+    \item \textbf{Re-parametrization of $\gamma$. } A piecewise smooth $\tilde{\gamma}: [\tilde{a}, \tilde{b}] \to \mathbb{C}$ is called a re-parametrization of $\gamma$ if there exists a continuously differentiable $\alpha: [a,b] \to [\tilde{a}, \tilde{b}]$ such that $\alpha(a) = \tilde{a}$ and $\alpha(b) = \tilde{b}$, and $\alpha'(t) > 0$ with $\gamma(t) = \tilde{\gamma}(\alpha(t))$. 
+    \item \textbf{Primitive. } We say a function $f: \Omega \to \mathbb{C}$ has a primitive on $\Omega$ if there exists a holomorphic function $F: \Omega \to \mathbb{C}$ such that $F'(z) = f(z)$ for all $z \in \Omega$. 
+    \item \textbf{Path-connected. } We say an open set $\Omega \subseteq \mathbb{C}$ is path-connected if for any pair of points $z_0, z_1 \in \Omega$ there exists a continuous path $\gamma: [0,1) \to \mathbb{C}$ such that $z_0 = \gamma(0)$ and $z_1 = \gamma(1)$, with $\gamma\left([0,1)\right) \subseteq \Omega$. 
+    \item \textbf{Path-independence. } If $z_0,z_1 \in \Omega$, then any paths $\gamma, \tilde{\gamma}$ (with shared endpoints $\gamma(0) = \tilde{\gamma}(0)$, $\gamma(1) = \tilde{\gamma}(1)$) have $\int_{\gamma} f(z) dz = \int_{\tilde{\gamma}} f(z) dz$. 
+    \item \textbf{Homotopy. } Let $\gamma_{0,1}: [a,b] \to \mathbb{C}$ be curves with shared endpoints $z_a, z_b$. A homotopy is a continuous function $H: [a,b] \times [0,1] \to \mathbb{C}$ with $t \times s \to H_s(t)$ such that $H_0(t) = \gamma_0(t)$ and $H_1(t) = \gamma_1(t)$. 
+    \item \textbf{Simply-connected. } A set $A$ is called simply-connected if every closed curve (loop) is homotopic to a point in $A$, with $H_s(t) \in A$ for all $s,t$. (Note: a point in $A$ is a constant loop). 
+    \item \textbf{Winding Number. } Let $\gamma$ be a loop in $\mathbb{C}$ and $z_0 \in \mathbb{C}$ but not on $\gamma$. Then the winding number of $\gamma$ (with respect to $z_0$) is $I(\gamma,z_0) = \frac{1}{2\pi i}\int_{\gamma} \frac{1}{z-z_0} dz$. 
+    \item \textbf{Entire. } We call a function $f: \mathbb{C} \to \mathbb{C}$ entire if it is holomorphic on $\mathbb{C}$. 
+    \item \textbf{Closure. } The closure of a set $A$, written $\overline{A}$, is $\overline{A} = \{\textrm{limit points of $A$}\}$. 
+    \item \textbf{Boundary of $A$. } The boundary $\partial A$ of a set $A \subseteq \mathbb{C}$ is $\partial A = \overline{A} \cap \overline{\left(\mathbb{C} \setminus A\right)}$. 
+    \item \textbf{Reflection: $\tilde{z} = \frac{R^2}{\overline{z}}$. } $\tilde{z} = \frac{R^2}{\overline{z}}$ is the reflection over the line the circle $|\xi| = R$. 
+    \item \textbf{Analytic. } A function $f: \Omega \to \mathbb{C}$ is analytic at $z_0 \in \Omega$ if there is a neighborhood $\mathcal{U}$ of $z_0$ on which $f(z) = \sum_{k=0}^{\infty} a_k(z-z_0)^k$ (for all $z \in \mathcal{U}$) where the RHS is a convergent power series. 
+    \item \textbf{Pole of Order $m$. } If $f$ is holomorphic on a deleted neighborhood $\mathcal{U} \setminus {z_0}$, we say $f$ has a pole of order $m$ if $\frac{1}{f}$ has a zero of order $m$. 
+    \item \textbf{Simple Pole. } If $f$ has a pole of order 1 at $z=z_0$, then $f$ has a simple pole at $z_0$. 
+    \item \textbf{Residue of $f$ at $z=z_0$. } Consider the principal part of the Laurent expansion of $f$ at $z=z_0$. Then, the coefficient $a_{-1}$ is the residue of $f$ at $z_0$ and we write it as $\Res_{z_0}(f) = a_{-1}$. 
+    \item \textbf{Meromorphic. } A function $f: \Omega \to \mathbb{C}$ is meromorphic if it is holomorphic on all of $\Omega$ except at a discrete set of poles. 
+    \item \textbf{Essential Singularity. } Let $f$ be holomorphic on $\Omega$ except at a point $z_0$. We call $z_0$ an essential singularity if $z_0$ is neither a pole nor a removable singularity. 
+    \item \textbf{Alternative Definition of Essential Singularity. } Let $f$ be holomorphic except possibly at a point $z_0$. Let $C_1 = \{z_0\}$ and $C_2 = \partial D_r(z_0)$. Then, $z_0$ is an essential singularity if there are infinitely many $a_{-n}$ in the Laurent series of $f$, where still $\Res_{z_0}(f) = a_{-1}$. 
+    \item \textbf{Holomorphic at Infinity. } Let $\mathcal{U} \subseteq \mathbb{C}$ be an open set containing $\mathbb{C} \setminus \overline{D_R(0)}$. A function $f: \mathcal{U} \to \mathbb{C}$ is holomorphic at infinity if $g(z) = f(1/z)$ has a removable singularity at 0, which in that case, we define $f(\infty) = g(0)$. 
+    \item \textbf{Zero (respectively, pole) of order at Infinity. } Let $\mathcal{U} \subseteq \mathbb{C}$ be an open set containing $\mathbb{C} \setminus \overline{D_R(0)}$. We say that $f: \mathcal{U} \to \mathbb{C}$ has a zero (respectively, pole) of order at $\infty$ if $g(z) = f(1/z)$ has a zero (respectively, pole) at $z=0$ (of order $m$). 
+    \item \textbf{Logarithmic Derivative. } Let $f: \Omega \to \mathbb{C}$ be meromorphic. Then, the logarithmic derivative of $f$ is $f'/f$. 
+    \item \textbf{Locally injective. } We call a function $f: \Omega \to \mathbb{C}$ locally injective near $z_0$ if there exists a neighborhood $\mathcal{U}$ of $z_0$ such that $f: \mathcal{U} \to \mathbb{C}$ is injective. 
+    \item \textbf{Infinite Product. } Suppose the sequence of finite products $P_N := \prod_{n=1}^{N} c_n = c_1 c_2 \dots c_N$ converges to a finite number (where $c_i \in \mathbb{C}$ for all $i$). We define $\prod_{n=1}^{\infty} c_n = \lim_{N \to \infty} \prod_{n=1}^{N} c_n$ to be the infinite product, and say that this infinite product converges. 
+    \item \textbf{Riemann-Zeta Function. } We define the Riemann-Zeta function to be $\zeta(z) = \sum_{n=1}^{\infty} \frac{1}{n^z}$. 
+    \item RESUME DEFINITIONS FOR NOVEMBER 18 LECTURE ONWARDS
+\end{enumerate}
+
+
+\end{document}

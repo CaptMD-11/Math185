@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage[linguistics]{forest}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage[cal=esstix,frak=euler,scr=boondox,bb= pazo]{mathalfa}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\allowdisplaybreaks
+\allowbreak
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedconjecture}{Distinct Factorizations Conjecture}
+\newtheorem{conjecture}{Conjecture}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Res}{Res}
+\newcounter{customDef}
+\renewcommand{\thecustomDef}{\arabic{customDef}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\begin{document}
+\title{Math 185 - Quiz 9 Definitions $\&$ Theorems}
+\author{}
+\date{}
+\maketitle
+\date
+
+\begin{enumerate}
+    \item \textbf{Lemma 0.1. } $z_0$ is a pole of $f$ iff there is a punctured disc $D_r(z_0) \setminus \{z_0\}$ on which $|f|$ is bounded below (by an $R>0$) and unbounded above. 
+    \item \textbf{Casorati-Weierstrauss. } Let $f: \Omega \to \mathbb{C}$ with $z_0 \in \Omega$. Also let $f$ have an essential singularity at $z_0$ and $f$ is holomorphic on $D_r(z_0) \setminus \{z_0\}$. Then, $f\left(D_r(z_0) \setminus \{z_0\}\right)$ is dense in $\mathbb{C}$. 
+    \item \textbf{Meromorphic. } Let $f: \Omega \to \mathbb{C}$. $f$ is \underline{meromorphic} if it is holomorphic on $\Omega$ except at a discrete set of poles. 
+    \item \textbf{Residue Theorem. } Let $\Omega \subseteq \mathbb{C}$ be open and connected and let $\gamma$ be a simple closed curve in $\Omega$ homotopic to a point in $\Omega$. Then, let $f$ be holomorphic on $\Omega$ except at a set of points $z_1,\dots,z_N$ inside $\gamma$. Then, we obtain the following: 
+    $$
+    \int_{\gamma} f(z) dz = 2 \pi i \sum_{k=1}^{N} \Res_{z_k} \left(f\right). 
+    $$
+\end{enumerate}
+
+
+\end{document}
