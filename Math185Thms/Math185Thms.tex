@@ -32,6 +32,8 @@
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\Res}{Res}
 \newcounter{customDef}
 \renewcommand{\thecustomDef}{\arabic{customDef}}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
@@ -131,6 +133,144 @@
         \item If $f'(z_0)$ exists, then $f'(z_0) = \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x} = \frac{\partial f}{\partial x} = \frac{\partial u}{\partial y} - i\frac{\partial v}{\partial y} = \frac{1}{i}\frac{\partial f}{\partial y}$. 
     \end{enumerate}
     \item \textbf{Inverse Function Theorem for $\mathbb{R}^2$. } If $f: \Omega \to \mathbb{R}^2$ is continuously differentiable and the Jacobian $Df(z_0)$ has $\det(Df(z_0)) \neq 0$, then there are neighborhoods $U \ni z_0$ and $V \ni f(z_0)$ such that $f: U \to V$is bijective with continuously differentiable $f^{-1}: V \to U$ such that $Df^{-1}(z_0) = [Df(z_0)]^{-1}$, which is the inverse matrix of $Df(z_0)$. 
+    \item \textbf{Inverse Function Theorem for $\mathbb{C}$. } Let $f: \Omega \to \mathbb{C}$ be holomorphic (with continuous $f'(z_0)$), and $f'(z) \neq 0$ for some $z_0 \in \Omega$. Then there exists a neighborhood $U \ni z_0$ and $V \ni f(z_0)$ such that $f: U \to V$ is bijective with holomorphic inverse $f^{-1}: V \to U$ such that for all $z_0 \in U$, $\frac{d}{dw} f^{-1}(w) = \frac{1}{f'(w)}$ with $w = f(z)$. 
+    \item \textbf{Prop. } Pick a branch $[a, a+2\pi)$. Then $\log z: \mathbb{C} \setminus \{0\} \to \mathbb{R} \times i[a, a + 2\pi)$ is the inverse of $\exp: \mathbb{R} \times i[a, a+2\pi) \to \mathbb{C}$. 
+    \item \textbf{Prop. } $\log: \mathbb{C} \setminus \mathbb{R}_{\leq 0} \to \mathbb{R} \times i(-\pi,\pi)$ is holomorphic with $\frac{d}{dz} \log z = \frac{1}{z}$. 
+    \item \textbf{Prop. } If $z_1,z_2 \in \mathbb{C} \setminus \mathbb{R}_{\leq 0}$, then $\log(z_1z_2) = \log z_1 + \log z_2 \Mod{2\pi i}$. 
+    \item \textbf{Prop. } By choosing different branches of log, we have the following: 
+    \begin{enumerate}
+        \item $a^b$ is independent of the branch iff $b \in \mathbb{Z}$. 
+        \item $a^b$ takes on exactly $q$ different values iff $b \in \mathbb{Q}$, so $b = \frac{p}{q}$ (with $p,q$ coprime). 
+        \item $a^b$ takes on infinitely many values iff $b$ is irrational or $\textrm{Im}(b) \neq 0$. 
+    \end{enumerate}
+    \item \textbf{Cor. } Choose a branch of log. Then the $n$th root function is given by $z^{1/n} = e^{\log (z/n)}$, where the $n$th root function has $n$ branches. 
+    \item \textbf{Prop. } Let $a,b \in \mathbb{C}$. Then: 
+    \begin{enumerate}
+        \item For any choice of branch of log, the function $\mapsto a^z$ is holomorphic on $\mathbb{C}$, and $z \mapsto (\log a) a^z$. 
+        \item Choose a branch of log. Then the function $z \mapsto z^b$ is holomorphic on the domain of log with derivative $z \mapsto bz^{b-1}$. 
+    \end{enumerate}
+    \item \textbf{Prop. (Re-parametrization). } If $\tilde{\gamma}$ is a re-parametrization of $\gamma$, then $\int_{\gamma} f = \int_{\tilde{\gamma}} f$ for any continuous $f$ on $\Omega$. 
+    \item \textbf{Fundamental Theorem of Line Integrals. } Let $F: \Omega \to \mathbb{C}$ be holomorphic on an open $\Omega$ and let $\gamma: [0,1] \to \Omega$ be piecewise smooth. Then, $\int_{\gamma} F'(z) dz = F(\gamma(1)) - F(\gamma(0))$. 
+    \item \textbf{Path-independence and Primitives Theorem. } Let $f: \Omega \to \mathbb{C}$ be continuous and $\Omega$ is open and connected. Then, TFAE: 
+    \begin{enumerate}
+        \item (path-independence) if $z_0, z_1 \in \Omega$, then any paths $\gamma, \tilde{\gamma}$ with shared endpoints $\gamma(0) = \tilde{\gamma}(0)$ and $\gamma(1) = \tilde{\gamma}(1)$ have $\int_{\gamma} f(z) dz = \int_{\tilde{\gamma}} f(z) dz$. 
+        \item (integral along loops is 0) if $\Gamma$ is a loop, with $\Gamma(1) = \Gamma(0)$, then $\int_{\Gamma} f(z) dz = 0$. 
+        \item (f has a primitive) There is a primitive $F$ for $f$ on $\Omega$.  
+    \end{enumerate}
+    \item \textbf{Cauchy-Goursat Theorem. } Let $f: \Omega \to \mathbb{C}$ be holomorphic on $\Omega$, simply connected, and open. Then for any loop $\Gamma \subseteq \Omega$, $\int_{\Gamma} f(z) dz = 0$. 
+    \item \textbf{Green's Theorem. } Let $f: \mathbb{R}^2 \to \mathbb{R}^2$ be a vector field and let $\gamma$ be a loop, and $A$ a region in the loop $\gamma$. Let $f(x,y) = (P(x,y), Q(x,y))$. Then, $\int_{\gamma} P(x,y) dx + Q(x,y) dy = \iint \curl F  dA = \iint \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy$. 
+    \item \textbf{Prop. } If $f(x+iy) = u(x,y) + iv(x,y)$, then $\int_{\gamma} f = \int_{\gamma} udx - vdy + i\int_\gamma u dx + vdy$. 
+    \item \textbf{Cauchy-Goursat Theorem (Weaker Version). } Let $f: \Omega \to \mathbb{C}$ be holomorphic with $f'(z)$ continuous and $\gamma: [0,1] \to \mathbb{C}$ a simple closed curve and $\Omega$ an open \& simply connected set. Then, $\int_\gamma f = 0$. 
+    \item \textbf{Cauchy-Goursat Theorem (for rectangles). } Let $R$ be a rectangle with $R$ and its interior are contained in an open set $\Omega$. Let $f: \Omega \to \mathbb{C}$ be holomorphic. Then, $\int_R f = 0$. 
+    \item \textbf{Cauchy-Goursat Theorem (for disks). } Suppose $f: D \to \mathbb{C}$ is holomorphic on an open disk $D := D_\rho(z_0)$. Then: 
+    \begin{enumerate}
+        \item $f$ has a primitive $F$ on $D$. 
+        \item if $\Gamma$ is any loop in $D$, then $\int_\Gamma = 0$. 
+    \end{enumerate}
+    \item \textbf{Deformation Theorem. } Suppose $f$ is holomorphic on an open set $\Omega$ and $\gamma_0, \gamma_1$ are piecewise continuously differentiable. Then there are continuously differentiable curves in $\Omega$. Then: 
+    \begin{enumerate}
+        \item If $\gamma_0, \gamma_1$ are paths from $z_0$ to $z_1$, which are homotopic in $\Omega$, then $\int_{\gamma_0} F = \int_{\gamma_1} F$. 
+        \item If $\gamma_0, \gamma_1$ are loops homotpic in $\Omega$, then $\int_{\gamma_0} F = \int_{\gamma_1} F$. 
+    \end{enumerate}
+    \item \textbf{Cauchy-Goursat Theorem (restated). } Let $f: \Omega \to \mathbb{C}$ be holomorphic with $\Omega$ open and a loop (let $\gamma$) be homotopic to a point in $\Omega$. Then, $\int_{\gamma} f dz$ = 0. 
+    \item \textbf{Cor. } If $\Omega$ is simply connected, then every loop $\gamma$ has $\int_\gamma f dz = 0$. 
+    \item \textbf{Cor. } Let $f: \Omega \to \mathbb{C}$ be holomorphic on a simply connected oen set $\Omega$. Then, $f$ has a primitive $F$ on $\Omega$ (unique up to constants). 
+    \item \textbf{Winding number (as an index). } Let $\gamma: [a,b] \to \mathbb{C}$ (a piecewise continuous) loop and $z \notin \gamma([a,b])$. Then, the winding number of $\gamma$ around $z_0$ is an integer. 
+    \item \textbf{Cauchy's Integral Formula. } Let $f$ be holomorphic on $\Omega$ and $\gamma$ a loop in $\Omega$ hommotopic to a point. Let $z_0 \in \Omega$ but $z_0 \notin \gamma$. Then, 
+    $$
+    f(z_0) \cdot I(\gamma, z_0) = \frac{1}{2\pi i} \cdot \int_\gamma \frac{f(z)}{z-z_0} dz. 
+    $$
+    \item \textbf{Cauchy's Integral Formula for Derivatives. } Let $f$ be holomorphic on $\Omega$. Then $f$ is infinitely differentiable (complex) and if $\gamma$ is a loop homotopic to a point (simple loop) $I(\gamma, z_0) = 1$, then: 
+    $$
+    f^{(n)}(z_0) = \frac{n}{2\pi i} \int_\gamma \frac{f(\xi)}{(\xi - z_0)^{n+1}} d\xi. 
+    $$
+    \item \textbf{Cor. } \textbf{Cauchy-Type Integrals. } Let $\gamma$ be a loop $\gamma: [a,b] \to \mathbb{C}$ and $g$ a continuous function on $\gamma$. Set $\tilde{g}(z) := \int_\gamma \frac{g(\xi)}{\xi - z} d\xi$. Then, $\tilde{g}(z)$ is holomorphic inside $\gamma$ and so $\tilde{g}(z)$ is infinitely differentiable. 
+    \item \textbf{Prop. (Cauchy Inequalities). } Let $f$ be holomorphic on $\Omega$ and let $\overline{D_R(z_0)} \subseteq \Omega$ with boundary $\gamma$. Suppose $f(z)$ is bounded above $|f(z)| \leq M$ for all $z \in \gamma$. Then for all $k=1,2,\dots$, the $k$th derivative is also upper bounded with $|f^{(k)}(z_0)| \leq \frac{k_i}{R^k}M$. 
+    \item \textbf{Louisville's Theorem. } If $f$ is entire and bounded (i.e. there exists an $M \in \mathbb{R}_{>0}$ with $|f(z)| \leq M$ for all $z \in \mathbb{C}$), then $f$ is constant. 
+    \item \textbf{Fundamental Theorem of Algebra. } Let $a_0,\dots,a_n \in \mathbb{C}$ with $a_i \neq 0$ for $n \geq 1$. Then the polynomial $p(z) = a_nz^n + \dots + a_0$ has a zero (root) where $z_0 \in \mathbb{C}$ with $p(z_0) = 0$. 
+    \item \textbf{Cor. } A degree $n$ complex polynomial has exactly $n$ roots, counting multiplicity. 
+    \item \textbf{Morera's Theorem. (partial converse to Cauchy-Goursat)} Let $f$ continuous on an open $\Omega$ and suppose that $\int_\gamma f = 0$ for every loop in $\Omega$. Then, $f$ is holomorphic on $\Omega$ and $f$ has a primitive $F$ on $\Omega$. 
+    \item \textbf{Cor. to Morera's Theorem (Removable Singularities Theorem). } Let $f$ be continuous on an open $\Omega$ in $\mathbb{C}$ and holomorphic on $\Omega \setminus \{z_0\}$, with $z_0 \in \mathbb{C}$. Then, $f$ is holomorphic on $\Omega$. 
+    \item \textbf{Another Cor. to Morera's Theorem. } If $f$ is holomorphic on $\Omega \setminus \{z_0\}$ and bounded on a neighborhood of $z_0$, there is unique holomorphic extension $\tilde{f}$ of $f$ to $\gamma$ defined by $\tilde{f}(z) = f(z)$ if $z \neq z_0$ and $\tilde{f}(z) = \lim_{z \to z_0} f(z)$ if $z = z_0$. 
+    \item \textbf{Mean Value Property. } Let $f$ be holomorphic on $\overline{D_R(z_0)}$. Then $f(z_0) = \frac{1}{2\pi} \int_{0}^{2\pi} f(z_0 + re^{i\theta}) d\theta$. 
+    \item \textbf{Maximum Principle, local version. } Let $f$ be holomorphic on a neighborhood $\Omega$ of $z_0$, and suppose that $|f|$ has a relative max at $z_0$. Then, $f$ is constant on some neighborhood $U$ of $z_0$. 
+    \item \textbf{Prop. } The following are true: 
+    \begin{enumerate}
+        \item $A \subseteq \overline{A}$. 
+        \item $\overline{A}$ is closed. 
+        \item $A$ is closed iff $A = \overline{A}$. 
+        \item If $A \subseteq C$ and $C$ closed, then $\overline{A} \subseteq C$. 
+    \end{enumerate}
+    \item \textbf{Maximum Modulus Principle. } Let $A$ be an open, connected, bounded set in $\mathbb{C}$ and suppose $f: \overline{A} \to \mathbb{C}$ is holomorphic on $A$ and continuous on $\overline{A}$. Then $|f|$ has a finite maximum value on $\overline{A}$ which is achieved on $\partial A$. IF $|f|$ is attained in $A$, then $f$ is constant. 
+    \item \textbf{Prop. } Let $u: \Omega \to \mathbb{R}$ be an twice-continuous harmonic function on an open set $\Omega \subseteq \mathbb{C}$. Then $u$ is infinitely differentiable, so $u$ is $C^\infty$, and in the neighborhood $U$ of $z_0 \in \Omega$, there exists a holomorphic function $f: U \to \mathbb{C}$ such that $u = \textrm{Re}(f)$. 
+    \item \textbf{Dirichlet Problem. } $\Delta u = 0$, $u \mid_{\partial \Omega} (\theta) = g(\theta)$. 
+    \item \textbf{Prop. } Let $u,\tilde{u}$ solve the Dirichlet Problem. Then, $u = \tilde{u}$, so the solution to the Dirichlet Problem is unique. 
+    \item \textbf{Solution to the Dirichlet Problem. } This is given by: 
+    $$
+    u(re^{i\phi}) = \frac{1}{2\pi} \int_{0}^{2\pi} u(Re^{i\theta}) \cdot \frac{R^2 - r^2}{|Re^{i\theta} - re^{i\theta}|} d\theta. 
+    $$
+    \item \textbf{Analytic Convergence Theorem. } Let $f_n: \Omega \to \mathbb{C}$ be a sequence of holomorphic functions. If $f_n \to f$ uniformly on every closed disk in $\Omega$, then: 
+    \begin{enumerate}
+        \item $f$ is holomorphic on $\Omega$. 
+        \item $f_n'$ converges to $f'$ uniformly on every closed disk, and pointwise on $\Omega$. 
+    \end{enumerate} 
+    \item \textbf{Prop. } Let $\gamma: [a,b] \to \Omega$ be a contour and $f_n: \gamma([a,b]) \to \mathbb{C}$ be a sequence of continuous functions. If $f_n \to f$ uniformly on $\gamma([a,b])$, then $\int_\gamma f_n \to \int_\gamma f$. 
+    \item \textbf{Power Series Convergence Theorem. } Let $\sum_{n=0}^{\infty} a_n(z-z_0)^n$ be a power series. Then there is a unique $R \geq 0$, possibly $R = \infty$, such that: 
+    \begin{enumerate}
+        \item If $|z-z_0| < R$, the series converges pointwise. 
+        \item If $|z-z_0| \leq R - \epsilon$, the series converges uniformly. 
+        \item If $|z-z_0| > R$, the series diverges. 
+        \item If $|z-z_0| = R$, need to check. 
+    \end{enumerate}
+    \item \textbf{Cor. } A power series is analytic on its disk of convergence and so, holomorphic by the analytic convergence theorem. 
+    \item \textbf{Cor 2. } We can apply term-by-term differentiation to the power series of an analytic function. 
+    \item \textbf{Cor 3. } Power series expansions around some center $z_0$ are unique. 
+    \item \textbf{Taylor Series Theorem. } Let $f$ be holomorphic on a region $\Omega$, and let $D_r(z_0) \subseteq \Omega$ with $r > 0$. Then for every $z \in D_r(z_0)$, the power series $f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n$ converges on $D_r(z_0)$ and equal to $f(z)$. We call this the Taylor series of $f$ centered at $z_0$. 
+    \item \textbf{Theorem. } $f$ is analytic iff $f$ is holomorphic. 
+    \item \textbf{Prop. } If $f$ is holomorphic on an open, connected set $\Omega$ and the zero set $\{z \in \Omega \mid f(z) = 0\}$ contains a limit point, then $f=0$ on $\Omega$. 
+    \item \textbf{Cor. (Identity Theorem). } Let $f,g$ be holomorphic on an open, connected $\Omega$ and $f(z)=g(z)$ for a set of $z$ with a limit point in $\Omega$. Then, $f=g$ on $\Omega$. 
+    \item \textbf{Cor. (Zeros are Isolated). } If $f$ is holomorphic on $\Omega$, and not identically zero on $\Omega$, then for any zero $z_0$ of $f$, there is a deleted neighborhood $U \setminus \{z_0\}$ on which $f(z) \neq 0$ for all $z \in U \setminus \{z_0\}$. 
+    \item \textbf{Cor. (Analytic Continuation). } If $f$ is holomorphic on an open, connected set $\Omega$ and $f_+$ is holomorphic on an open connected $\Omega_+ \supseteq \Omega$ with $f_+ = f$ on $\Omega$, then $f_+$ is the unique such extension, i.e. if there exists another such extension, $\tilde{f}_+$, then $\tilde{f}_+ = f_+$. 
+    \item \textbf{Lemma. } Let $f: \Omega \to \mathbb{C}$ be holomorphic, not identically 0, with a zero $z_0$. Then in a neighborhood $U$ of $z_0$, we may write $f(z) = (z-z_0)^mg(z)$ for all $z \in U$, where $g(z) \neq 0$ and $m$ is unique. 
+    \item \textbf{Lemma. } A function $f$ has a pole of order $m$ at $z_0$ iff there is a neighborhood $U$ of $z_0$ on which $f(z) = (z-z_0)^{-m}g(z)$ for all $z \in U \setminus \{z_0\}$ with a nonzero $g(z)$ and $g$ holomorphic on $U$. 
+    \item \textbf{Theorem. } If $f$ has a pole of order $m$ at $z_0$, then it can be represented uniquely as: 
+    $$
+    f(z) = \frac{a_{-m}}{(z-z_0)^m} + \frac{a_{-m+1}}{(z-z_0)^{m-1}} + \dots + \frac{a_{-1}}{z-z_0} + G(z)
+    $$ where $G(z)$ is holomorphic on a neighborhood $U$ of $z_0$ and $a_{-m}, \dots, a_{-1} \in \mathbb{C}$ with $a_{-m} \neq 0$. 
+    \item \textbf{Residue Theorem, Simple Version. } Let $f$ be holomorphic on a set $\Omega \supseteq \overline{D_R(z_0)}$, $\gamma = \partial \overline{D_R(z_0)}$ except at $z_0$. Then $\int_\gamma f(z) dz = 2\pi i \Res_{z_0}(f)$. 
+    \item \textbf{Residue Theorem, Simple Closed Loops. } Let $\Omega$ be open, connected and $\gamma$ a simple loop homotopic to a point in $\Omega$. Let $f$ be a function $f: \Omega \to \mathbb{C}$ be holomorphic except at a finite set of points $z_1, \dots, z_N$ inside $\gamma$. Then, $\int_\gamma f(z) dz = 2\pi i \sum_{k=1}^{N}\Res_{z_k}(f)$. 
+    \item \textbf{Laurent Series Theorem. } Let $C_1, C_2$ be two circles centered at $z_0$ (it is fine if $C_1 = \{z_0\}$ and $C_2$ "encloses" $\mathbb{C}$). Call $R$ the region the annulus between $C_1$ and $C_2$. Let $f$ be holomorphic on $R$. Then $f$ can be expanded uniquely as a (absolutely) convergent power series in $R$ by: 
+    $$
+    f(z) = \sum_{n=1}^{\infty} \frac{a_{-n}}{(z-z_0)^n} + \sum_{n=0}^{\infty}a_n(z-z_0)^n. 
+    $$ where the first infinite series is called the principal part and second one is called the Taylor series / holomorphic part. 
+    \item \textbf{Casorati-Weierstrauss Theorem. } If $f$ is holomorphic in a deleted $D_r(z_0) \setminus \{z_0\}$ and has an essential singularity at $z_0$, then the image of $f\left(D_r(z_0) \setminus \{z_0\}\right)$ is dense in $\mathbb{C}$. 
+    \item \textbf{Prop. (Fourier Transform). } Let $f: \mathbb{R} \to \mathbb{R}$ be a real function. The Fourier Transform of $f$ is the function $\hat{f}: \mathbb{R} \to \mathbb{R}$ given by $\hat{f}(k) = \int_{-\infty}^{\infty}f(x) \cdot e^{-ikx} dx$. 
+    \item \textbf{Jordan's Lemma. } $\int_{0}^{\pi} e^{-R\sin\theta} d\theta \leq \frac{\pi}{R}$. 
+    \item \textbf{Cauchy Principal Value. } Take the real integral symmetrically, so we can find an indefinite integral (with discontinuity in the interval) by approaching "the same way" from both sides of the discontinuity. 
+    \item \textbf{Argument Principle. } Let $f: \Omega \to \mathbb{C}$ be meromorphic and $\gamma$ a simple loop in $\Omega$ bounding a simply connected region $R_\gamma$, with $\overline{R_\gamma} \subseteq \Omega$. Let $f$ have no zeros or poles on $\gamma$. Then: 
+    $$
+    \frac{1}{2\pi i} \int_{\gamma} \frac{f'(z)}{f(z)} dz = N - P
+    $$ where $N$ is the number of zeros of $f$ inside $R_\gamma$ (counting multiplicity) and $P$ is the number of poles of $f$ inside $R_\gamma$ (counting multiplicity). 
+    \item \textbf{Rouche's Theorem. } Let $f,g: \Omega \to \mathbb{C}$ be holomorphic and let $\gamma$ be a simple loop bounding a simply connected open $U$, with $\overline{U} \subseteq \Omega$. If $|f(z)| > |g(z)|$ on $\gamma$, then $f$ and $f+g$ have the same number of zeros inside $U$. 
+    \item \textbf{Open-Mapping Theorem. } Any nonconstant holomorphic function is an open map, meaning it maps open sets to open sets. 
+    \item \textbf{Lemma. (Local Injectivity). } Let $f: \Omega \to \mathbb{C}$ be holomorphic and $z_0 \in \Omega$. If $f'(z_0) \neq 0$, then $f$ is locally injective near $z$. 
+    \item \textbf{Theorem. } If $g: \Omega \to \mathbb{C}$ is holomorphic and $\Omega$ is simply connected, and $g \neq 0$, there exists a holomorphic function $F: \Omega \to \mathbb{C}$ satisfying $e^{F(z)} = g(z)$, where $F(z)$ is unique up to $2\pi ik$, with $k \in \mathbb{Z}$. 
+    \item \textbf{Theorem (Local description of holomorphic). } Let $f: \Omega \to \mathbb{C}$ be holomorphic, $\Omega$ open. Let $z_0 \in \Omega$ and let $k \geq 1$ denote the order of the zero $f(z) - f(z_0)$ at $z_0$. Then, there exists an open neighborhood $U$ of $z_0$ (and $r>0$) and a function $\phi: U \to D_r(z_0)$ such that: 
+    \begin{enumerate}
+        \item $\phi$ is holomorphic with a holomorphic inverse. 
+        \item $\phi(z_0) = 0$. 
+        \item We have $f(z) = f(z_0) + (\phi(z))^k$ with $z \in U$. 
+    \end{enumerate}
+    \item \textbf{Prop. } Let $\{a_n\}_{n=1}^{\infty}$ be a sequence of complex numbers. If $\sum_{n=1}^{\infty}|a_n| < \infty$, then $\prod_{n=1}^{\infty}(1+a_n)$ converges and its value is 0 iff one of the $1+a_n$ factors is zero. 
+    \item \textbf{Prop. } Let $\{f_n\}_{n=1}^{\infty}$ be a sequence of holomorphic functions on $\Omega$. If $\sum_{n=1}^{\infty}|f_n|$ converges uniformly on compact subsets of $\Omega$, then so does $\prod_{n-1}^{\infty}(1 + f_n(z))$. Moreover, the limiting function is holomorphic and nonzero everywhere except at points $z$ such that $1 + f_n(z) = 0$ (for some $n$). 
+    \item \textbf{Prop. (Partial fractions expansion for log derivatives). } Same assumptions as the above proposition. Then, the log derivative of product = sum of log derivatives. i.e. 
+    $$
+    \frac{\left(\prod_{n=1}^{\infty}(1+f_n)\right)'}{\prod_{n=1}^{\infty}(1+f_n)} = \sum_{n=1}^{\infty} \frac{f_n'}{1 + f_n}. 
+    $$
+    \item \textbf{Infinite products formula for sine. } $\sin(\pi z) = \pi z \cdot \prod_{n=1}^{\infty}(1 - \frac{z}{n})(1 + \frac{z}{n})$, for $z \in \mathbb{C}$. 
+    \item \textbf{Prop. } Fix $z \in \mathbb{C} \setminus \mathbb{Z}$ and a large positive $N \in \mathbb{Z}$. By the residue theorem, the integral $I_N(z) := \int_{\gamma_N} \frac{\pi\cot(\pi z)}{(w+z)^2} dw$. 
+    \item \textbf{Cor. } $\cos(\pi z) = \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{\left(n - \frac{1}{2}\right)^2}\right)$, so $e^z - 1 = ze^{z/2} \cdot \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{4\pi^2n^2}\right)$. 
+    \item RESUME THEOREMS FOR NOVEMBER 18 LECTURE ONWARDS
 \end{enumerate}
 
 
