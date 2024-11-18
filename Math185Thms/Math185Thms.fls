@@ -1403,6 +1403,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT Math185Thms.aux
 INPUT ./Math185Thms.out
 INPUT ./Math185Thms.out
