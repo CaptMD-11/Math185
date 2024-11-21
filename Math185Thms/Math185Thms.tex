@@ -271,7 +271,20 @@
     \item \textbf{Prop. } Fix $z \in \mathbb{C} \setminus \mathbb{Z}$ and a large positive $N \in \mathbb{Z}$. By the residue theorem, the integral $I_N(z) := \int_{\gamma_N} \frac{\pi\cot(\pi z)}{(w+z)^2} dw$. 
     \item \textbf{Cor. } $\cos(\pi z) = \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{\left(n - \frac{1}{2}\right)^2}\right)$, $e^z - 1 = ze^{z/2} \cdot \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{4\pi^2n^2}\right)$, and $\pi\cot(\pi z) = \frac{1}{z} + \sum_{n=1}^{\infty} \frac{2z}{z^2 - n^2}$ (for the contangent expression, $z \in \mathbb{C} \setminus \mathbb{Z}$). 
     \item \textbf{Theorem (Schwarz Reflection Principle). } Let $A$ be a region in the upper-half plane with $\partial A \cap \mathbb{R}$ nonempty and containing $[a,b] \subseteq \mathbb{R}$. Let $f$ be holomorphic on $A$ and continuous on $\partial A \cap [a,b]$ and real on $[a,b]$. Then $f$ can be uniquely extended to a holomorphic function on $A \cup (a,b) \cup A_{\textrm{ref}}$, where $A_{\textrm{ref}} = \{\overline{z} \mid z \in A\}$ with $f(z) = \overline{f(\overline{z})}$ for all $z \in A_{\textrm{ref}}$. 
-    \item ADD THEOREMS FROM NOVEMBER 20 HERE
+    \item \textbf{Theorem (Gamma Function). } There is a unique $\Gamma(s)$ with the following: 
+    \begin{enumerate}
+        \item $\Gamma(s)$ is meromorphic. 
+        \item (Factorial). $\Gamma(n+1) = n!$ for $n=0,1,2,\dots$. 
+        \item (Special Value). $\Gamma(\frac{1}{2}) = \sqrt{\pi}$. 
+        \item (Integral Representation). $\Gamma(s) = \int_{0}^{\infty} e^{-x} x^{s-1} dx$ (for $\textrm{Re}(s) > 0$). 
+        \item (Infinite Product Representation). $\Gamma(s) = s^{-1}e^{\gamma s} \prod_{n=1}^{\infty} \left(1 + \frac{s}{s}\right)^{-1} e^{s/n}$ where $\gamma = \lim_{n \to \infty} \left(\frac{1}{1} + \frac{1}{2} + \dots + \frac{1}{n} - \log n\right) \approx 0.58...$ (Euler-Mascheroni constant) (for $s \in \mathbb{C}$, except poles). 
+        \item (Limit of finite products). $\Gamma(s) = \lim_{n \to \infty} \frac{n! n^s}{s(s+1)\dots(s+n)}$ (for $s \in \mathbb{C}$, except poles). 
+        \item (Zeros). $\Gamma(s)$ has no zeros. 
+        \item (Poles). $\Gamma(s)$ has poles at nonpositive integers $s=0,-1,-2,\dots$ and is holomorphic everywhere else. At $s=-n$, the pole is simple and $\Res_{-n}(\Gamma) = -\frac{1}{n!}$. 
+        \item (Functional Equation). $\Gamma(s+1) = s\Gamma(s)$ (for $s \in \mathbb{C}$, except at poles). 
+        \item (Reflection Formula). $\Gamma(s)\Gamma(1-s) = \frac{\pi}{\sin(\pi s)}$ (for $s \in \mathbb{C}$, except at poles). 
+        \item ADD THEOREMS FROM NOVEMBER 22 LECTURE
+    \end{enumerate}
 \end{enumerate}
 
 
