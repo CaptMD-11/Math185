@@ -58,6 +58,7 @@
     \item \textbf{Closed Sets. } A subset $F \subseteq \mathbb{C}$ is called closed if its complement $\mathbb{C} \setminus F$ is open. 
     \item \textbf{Compact. } A subset $K \subseteq \mathbb{C}$ is called compact if every open cover of $K$ has a finite subcover. 
     \item \textbf{Uniform Convergence. } A sequence of functions $f_n: \Omega \to \mathbb{C}$ converges uniformly to a function $f: \Omega \to \mathbb{C}$ if for all $\epsilon > 0$ there exists an $N \in \mathbb{N}$ such that if $n \geq N$, then $|f_n(z) - f(z)| < \epsilon$ for all $z \in \Omega$. 
+    \item \textbf{Real Differentiable. } $f$ is real differentiable at $z_0$ if the following limit exists: $\lim_{h \to 0} \frac{f(z+h) - f(z) - D(f'(z))h}{h}$, where $D(f'(z))$ is the Jacobian matrix. 
     \item \textbf{Derivative. } Let $f: \Omega \to \mathbb{C}$, where $\Omega$ is a neighborhood of $z_0$. The derivative of $f$ at $z_0$ is the limit $f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}$. We call $f$ \textbf{complex differentiable} at $z_0$ if this limit exists. If $f'(z_0)$ exists for all $z_0 \in \Omega$, we call $f$ \textbf{holomorphic} on $\Omega$. 
     \item \textbf{Branch of the Argument. } This is a choice of interval (here, $[-\pi,\pi)$ or $[a,a+2\pi)$). 
     \item \textbf{Principal Branch of the Logarithm. } Pick a branch $[a, a+2\pi)$. Then, $\log: \mathbb{C} \setminus \{0\} \to \mathbb{R} \times i[a,a+2\pi)$ is defined by $\log z = \log |z| + i\arg z$, where $\arg z \in [a, a+2\pi)$. We call the branch $[-\pi,\pi)$ the principal branch. 
