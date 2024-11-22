@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.31)  20 NOV 2024 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.31)  21 NOV 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -8,8 +8,8 @@ entering extended mode
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -1002,12 +1002,12 @@ LaTeX Font Info:    ... okay on input line 40.
 * \topmargin=-66.59087pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1057,9 +1057,9 @@ LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
@@ -1071,28 +1071,28 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 Non-PDF special ignored!
 <special> header=tree-dvips91.pro
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3] [4] [5] [6] [7]
-Overfull \hbox (46.27272pt too wide) in paragraph at lines 280--281
-[]\OT1/ptm/m/n/10.95 (Infinite Prod-uct Rep-re-sen-ta-tion). $\OT1/ztmcm/m/n/10.95 ^^@(\OML/ztmcm/m/it/10.95 s\OT1/ztmcm/m/n/10.95 ) = \OML/ztmcm/m/it/10.95 s[]e[] [][] [][] e[]$ \OT1/ptm/m/n/10.95 where $\OML/ztmcm/m/it/10.95 ^^M \OT1/ztmcm/m/n/10.95 = [][] [] \OMS/ztmcm/m/n/10.95 ^^Y
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3] [4] [5] [6]
+Overfull \hbox (0.93744pt too wide) in paragraph at lines 280--281
+[]\OT1/ptm/m/n/10 (Infinite Prod-uct Rep-re-sen-ta-tion). $\OT1/ztmcm/m/n/10 ^^@(\OML/ztmcm/m/it/10 s\OT1/ztmcm/m/n/10 ) = \OML/ztmcm/m/it/10 s[]e[] [][] [][] e[]$ \OT1/ptm/m/n/10 where $\OML/ztmcm/m/it/10 ^^M \OT1/ztmcm/m/n/10 = [][] [] \OMS/ztmcm/m/n/10 ^^Y
  []
 
-[8] (./Math185Thms.aux)
+[7] (./Math185Thms.aux)
 Package rerunfilecheck Info: File `Math185Thms.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37333 strings out of 476025
- 841892 string characters out of 5790017
- 1878388 words of memory out of 5000000
+ 37331 strings out of 476025
+ 841863 string characters out of 5790017
+ 1880388 words of memory out of 5000000
  56899 multiletter control sequences out of 15000+600000
- 539285 words of font info for 91 fonts, out of 8000000 for 9000
+ 538311 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,8n,120p,1665b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,8n,120p,1665b,623s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Math185Thms.pdf (8 pages, 142530 bytes).
+Output written on Math185Thms.pdf (7 pages, 141659 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
- 283 compressed objects within 3 object streams
- 188 named destinations out of 1000 (max. 500000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 187 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
