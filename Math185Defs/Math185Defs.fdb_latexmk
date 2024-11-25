@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1732334499 "/Users/nydhruva/git/LaTeX/Math185/Math185Defs/Math185Defs.tex" "Math185Defs.pdf" "Math185Defs" 1732334500 0
-  "/Users/nydhruva/git/LaTeX/Math185/Math185Defs/Math185Defs.tex" 1732334499 12548 c496896bcb60e89aac678f003c892436 ""
+["pdflatex"] 1732565052 "/Users/nydhruva/git/LaTeX/Math185/Math185Defs/Math185Defs.tex" "Math185Defs.pdf" "Math185Defs" 1732565053 0
+  "/Users/nydhruva/git/LaTeX/Math185/Math185Defs/Math185Defs.tex" 1732565052 12803 bd1af382fec9abf67d6ef0fb647cbd8f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -269,9 +269,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1693530960 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1693530901 7883453 e715a5447c98d5844e9e25d55e00422f ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Math185Defs.aux" 1732334500 554 dd2b48f1aba1e3b725040b4d3abf7fbe "pdflatex"
-  "Math185Defs.out" 1732334499 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Math185Defs.tex" 1732334499 12548 c496896bcb60e89aac678f003c892436 ""
+  "Math185Defs.aux" 1732565053 554 dd2b48f1aba1e3b725040b4d3abf7fbe "pdflatex"
+  "Math185Defs.out" 1732565053 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Math185Defs.tex" 1732565052 12803 bd1af382fec9abf67d6ef0fb647cbd8f ""
   (generated)
   "Math185Defs.aux"
   "Math185Defs.log"

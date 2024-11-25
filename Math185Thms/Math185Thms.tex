@@ -34,6 +34,8 @@
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\curl}{curl}
 \DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\id}{id}
 \newcounter{customDef}
 \renewcommand{\thecustomDef}{\arabic{customDef}}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
@@ -301,7 +303,17 @@
         \item Blob
     \end{enumerate}
     \item \textbf{Lemma. } If $\Omega \sim \Omega'$, then $\Omega$ and $\Omega'$ are homeomorphic (a.k.a. there is a continuous map $g: \Omega \to \Omega'$ such that $g^{-1}$ is defined and also continuous). 
-    \item ADD THEOREMS FROM NOV 25 LECTURE
+    \item \textbf{Lemma. } If $\Omega \sim \Omega'$, then they are homeomorphic. 
+    \item \textbf{Prop. } If $g: \Omega \to \Omega'$ is holomorphic and invertible, then $g^{-1}$ is holomorphic (i.e. $g$ is conformal). 
+    \item \textbf{Lemma. } $\Aut(\Omega)$ is a group, with function composition. In other words, let $f,g,h \in \Aut(\Omega)$. Then: 
+    \begin{enumerate}
+        \item $(g \circ f) \circ h = g \circ (f \circ h)$. 
+        \item If $g \in \Aut(\Omega)$, then $g^{-1} \in \Aut(\Omega)$. 
+        \item There is an identity map $\id \in \Aut(\Omega)$ such that $\id \circ g(z) = g(z) = g \circ \id(z) = g(z)$. 
+    \end{enumerate}
+    \item \textbf{Theorem. } Let $g: \mathbb{C} \to \Omega$ be a conformal map between $\mathbb{C}$ and a region $\Omega$. Then, $\Omega = \mathbb{C}$ and $g(z)$ is a conformal automorphism of the form $g(z) = az+b$, with $a \neq 0$ and $b \in \mathbb{C}$. 
+    \item \textbf{Theorem (Riemann Sphere). } Let $\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}$. If $g: \hat{\mathbb{C}} \to \Omega$ is a conformal map, then $\Omega = \hat{\mathbb{C}}$ and $g$ is a conformal automorphism, with $g(z) = \frac{az+b}{cz+d}$ with $a,b,c,d \in \mathbb{C}$ (i.e. $g$ is a Möbius transformation). 
+    \item ADD THEOREMS FROM DECEMBER 2 LECTURE
 \end{enumerate}
 
 
