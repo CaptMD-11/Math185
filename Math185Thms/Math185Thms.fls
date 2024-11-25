@@ -4,6 +4,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT /Users/nydhruva/git/LaTeX/Math185/Math185Thms/Math185Thms.tex
 OUTPUT Math185Thms.log
+INPUT /Users/nydhruva/preamble.tex
+INPUT /Users/nydhruva/preamble.tex
+INPUT /Users/nydhruva/preamble.tex
+INPUT /Users/nydhruva/preamble.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
