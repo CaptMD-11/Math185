@@ -1,0 +1,12 @@
+\input{~/preamble.tex}
+\begin{document}
+
+\title{Finite Intersection of Open Sets}
+\author{}
+\date{}
+\maketitle
+
+\textbf{Proposition. } The intersection of finitely many open sets is open. \\
+\\
+\textit{Proof. } Let the open sets be $E_1,\dots,E_n$. In the first case, if their intersection is $\emptyset$, then the proposition is vacuously true and we are done. Now assume $\cap_{i=1}^n E_i \neq \emptyset$ and put $I := \cap_{i=1}^n E_i$. Let $z \in I$. Since each $E_i$ is open, each point inside $E_i$ is an interior point (for all $i$). Then, $z$ is an interior point of each $E_i$. Then, put $\partial I$ as the boundary (contour) of $I$ where $z$ lies inside the region enclosed by $\partial I$. Put $R := \min\{|z-m|\}$ for each $m \in \partial I$. By assumption, $R>0$ since if otherwise, we would be in the first case. Then, the open disc $D_{R/2}(z) \subsetneq I$ and so $z$ is an interior point of $I$. Since $z$ was arbitrary, it follows that every point in $I$ is an interior point and we are done. \qed. 
+\end{document}
