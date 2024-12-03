@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.31)  2 DEC 2024 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.31)  2 DEC 2024 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/nydhruva/git/LaTeX/Math185/FinalCheatSheet/FinalCheatSheet.tex
-(/Users/nydhruva/git/LaTeX/Math185/FinalCheatSheet/FinalCheatSheet.tex
+**/Users/nydhruva/git/LaTeX/Math185/scrap/scrap.tex
+(/Users/nydhruva/git/LaTeX/Math185/scrap/scrap.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -1031,8 +1031,8 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 47.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./FinalCheatSheet.aux)
-\openout1 = `FinalCheatSheet.aux'.
+) (./scrap.aux)
+\openout1 = `scrap.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
@@ -1107,9 +1107,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 47.
- (./FinalCheatSheet.out) (./FinalCheatSheet.out)
+ (./scrap.out) (./scrap.out)
 \@outlinefile=\write5
-\openout5 = `FinalCheatSheet.out'.
+\openout5 = `scrap.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 54.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
@@ -1155,20 +1155,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 341--342
 []\OT1/ptm/m/n/6 (Infinite Prod-uct Rep-re-sen-ta-tion). $\OT1/ztmcm/m/n/6 ^^@(\OML/ztmcm/m/it/6 s\OT1/ztmcm/m/n/6 ) = \OML/ztmcm/m/it/6 s[]e[] [][] [][] e[]$ \OT1/ptm/m/n/6 where $\OML/ztmcm/m/it/6 ^^M \OT1/ztmcm/m/n/6 =
  []
 
-[4] (./FinalCheatSheet.aux)
-Package rerunfilecheck Info: File `FinalCheatSheet.out' has not changed.
+[4] (./scrap.aux)
+Package rerunfilecheck Info: File `scrap.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  37573 strings out of 476025
- 845719 string characters out of 5790017
+ 845519 string characters out of 5790017
  1950388 words of memory out of 5000000
  57069 multiletter control sequences out of 15000+600000
  531321 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,8n,120p,1673b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,8n,120p,1653b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalCheatSheet.pdf (4 pages, 160367 bytes).
+Output written on scrap.pdf (4 pages, 160367 bytes).
 PDF statistics:
  389 PDF objects out of 1000 (max. 8388607)
  357 compressed objects within 4 object streams
