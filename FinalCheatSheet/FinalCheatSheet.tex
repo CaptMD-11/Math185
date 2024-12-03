@@ -1,0 +1,248 @@
+\documentclass[12pt]{article}
+\usepackage[left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage[linguistics]{forest}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{blindtext}
+% \usepackage[cal=esstix,frak=euler,scr=boondox,bb= pazo]{mathalfa}
+% the following 2 packages are used for changing the font. 
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{multicol}
+\graphicspath{{./images/}}
+\allowdisplaybreaks
+\allowbreak
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedconjecture}{Distinct Factorizations Conjecture}
+\newtheorem{conjecture}{Conjecture}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\id}{id}
+\newcounter{customDef}
+\renewcommand{\thecustomDef}{\arabic{customDef}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+% the following line is for the omission of the title
+\pagestyle{empty}
+\begin{document}
+
+{\tiny 
+\begin{multicols}{2}
+\begin{spacing}{1.01}
+
+\begin{enumerate}
+    \item \textbf{Uniform Convergence.} A sequence of functions $f_n: \Omega \to \mathbb{C}$ converges uniformly to a function $f: \Omega \to \mathbb{C}$ if for all $\epsilon > 0$ there exists an $N \in \mathbb{N}$ such that if $n \geq N$, then $|f_n(z) - f(z)| < \epsilon$ for all $z \in \Omega$. 
+    \item \textbf{Real Differentiable.} $f$ is real differentiable at $z_0$ if the following limit exists: $\lim_{h \to 0} \frac{f(z+h) - f(z) - D(f'(z))h}{h}$, where $D(f'(z))$ is the Jacobian matrix. 
+    \item \textbf{Derivative. } Let $f: \Omega \to \mathbb{C}$, where $\Omega$ is a neighborhood of $z_0$. The derivative of $f$ at $z_0$ is the limit $f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}$. We call $f$ \textbf{complex differentiable} at $z_0$ if this limit exists. If $f'(z_0)$ exists for all $z_0 \in \Omega$, we call $f$ \textbf{holomorphic} on $\Omega$. 
+    \item \textbf{Principal Branch of the Logarithm. } Pick a branch $[a, a+2\pi)$. Then, $\log: \mathbb{C} \setminus \{0\} \to \mathbb{R} \times i[a,a+2\pi)$ is defined by $\log z = \log |z| + i\arg z$, where $\arg z \in [a, a+2\pi)$. We call the branch $[-\pi,\pi)$ the principal branch. 
+    \item \textbf{Exponentiation of complex numbers $a,b$. } Choose a branch of $\log$, with $\log: \Omega \to \mathbb{C}$ and $a,b \in \mathbb{C}$. Then, define $a^b := e^{b\log a}$. 
+    \item \textbf{Contour Integral. } Suppose $f$ is continuous on an open set $\Omega$ and $\gamma: [a,b] \to \Omega$ is a smooth curve. Then the contour integral of $f$ along $\gamma$ is defined to be $\int_{\gamma} f := \int_{\gamma} f(z) dz := \int_{a}^{b}f(\gamma(t))\gamma'(t) dt$. 
+    \item \textbf{Re-parametrization of $\gamma$. } A piecewise smooth $\tilde{\gamma}: [\tilde{a}, \tilde{b}] \to \mathbb{C}$ is called a re-parametrization of $\gamma$ if there exists a continuously differentiable $\alpha: [a,b] \to [\tilde{a}, \tilde{b}]$ such that $\alpha(a) = \tilde{a}$ and $\alpha(b) = \tilde{b}$, and $\alpha'(t) > 0$ with $\gamma(t) = \tilde{\gamma}(\alpha(t))$. 
+    \item \textbf{Path-connected. } We say an open set $\Omega \subseteq \mathbb{C}$ is path-connected if for any pair of points $z_0, z_1 \in \Omega$ there exists a continuous path $\gamma: [0,1) \to \mathbb{C}$ such that $z_0 = \gamma(0)$ and $z_1 = \gamma(1)$, with $\gamma\left([0,1)\right) \subseteq \Omega$. 
+    \item \textbf{Path-independence. } If $z_0,z_1 \in \Omega$, then any paths $\gamma, \tilde{\gamma}$ (with shared endpoints $\gamma(0) = \tilde{\gamma}(0)$, $\gamma(1) = \tilde{\gamma}(1)$) have $\int_{\gamma} f(z) dz = \int_{\tilde{\gamma}} f(z) dz$. 
+    \item \textbf{Simply-connected. } A set $A$ is called simply-connected if every closed curve (loop) is homotopic to a point in $A$, with $H_s(t) \in A$ for all $s,t$. (Note: a point in $A$ is a constant loop). 
+    \item \textbf{Winding Number. } Let $\gamma$ be a loop in $\mathbb{C}$ and $z_0 \in \mathbb{C}$ but not on $\gamma$. Then the winding number of $\gamma$ (with respect to $z_0$) is $I(\gamma,z_0) = \frac{1}{2\pi i}\int_{\gamma} \frac{1}{z-z_0} dz$. 
+    \item \textbf{Reflection: $\tilde{z} = \frac{R^2}{\overline{z}}$. } $\tilde{z} = \frac{R^2}{\overline{z}}$ is the reflection over the line the circle $|\xi| = R$. 
+    \item \textbf{Analytic. } A function $f: \Omega \to \mathbb{C}$ is analytic at $z_0 \in \Omega$ if there is a neighborhood $\mathcal{U}$ of $z_0$ on which $f(z) = \sum_{k=0}^{\infty} a_k(z-z_0)^k$ (for all $z \in \mathcal{U}$) where the RHS is a convergent power series. 
+    \item \textbf{Pole of Order $m$. } If $f$ is holomorphic on a deleted neighborhood $\mathcal{U} \setminus {z_0}$, we say $f$ has a pole of order $m$ if $\frac{1}{f}$ has a zero of order $m$. 
+    \item \textbf{Meromorphic. } A function $f: \Omega \to \mathbb{C}$ is meromorphic if it is holomorphic on all of $\Omega$ except at a discrete set of poles. 
+    \item \textbf{Alternative Definition of Essential Singularity. } Let $f$ be holomorphic except possibly at a point $z_0$. Let $C_1 = \{z_0\}$ and $C_2 = \partial D_r(z_0)$. Then, $z_0$ is an essential singularity if there are infinitely many $a_{-n}$ in the Laurent series of $f$, where still $\Res_{z_0}(f) = a_{-1}$. 
+    \item \textbf{Holomorphic at Infinity. } Let $\mathcal{U} \subseteq \mathbb{C}$ be an open set containing $\mathbb{C} \setminus \overline{D_R(0)}$. A function $f: \mathcal{U} \to \mathbb{C}$ is holomorphic at infinity if $g(z) = f(1/z)$ has a removable singularity at 0, which in that case, we define $f(\infty) = g(0)$. 
+    \item \textbf{Zero (respectively, pole) of order at Infinity. } Let $\mathcal{U} \subseteq \mathbb{C}$ be an open set containing $\mathbb{C} \setminus \overline{D_R(0)}$. We say that $f: \mathcal{U} \to \mathbb{C}$ has a zero (respectively, pole) of order at $\infty$ if $g(z) = f(1/z)$ has a zero (respectively, pole) at $z=0$ (of order $m$). 
+    \item \textbf{Logarithmic Derivative. } Let $f: \Omega \to \mathbb{C}$ be meromorphic. Then, the logarithmic derivative of $f$ is $f'/f$. 
+    \item \textbf{Locally injective. } We call a function $f: \Omega \to \mathbb{C}$ locally injective near $z_0$ if there exists a neighborhood $\mathcal{U}$ of $z_0$ such that $f: \mathcal{U} \to \mathbb{C}$ is injective. 
+    \item \textbf{Conformal Maps. } Smooth, invertible maps $f: \mathbb{R}^2 \to \mathbb{R}^2$ whose Jacobian at a point can be factored as $\textrm{(scaling)} \cdot \textrm{(rotation)}$ are called conformal maps. (note: by Cauchy-Riemann equations, we have that $\begin{pmatrix}
+        a & -b \\
+        b & a
+    \end{pmatrix} = |a+bi|^2 \cdot \frac{1}{|a+bi|^2} \begin{pmatrix}
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{pmatrix}$, where the $|a+bi|^2$ factor represents scaling and the other factors together represent the orthogonal scaling matrix). 
+    \item \textbf{Conformal Maps (2nd definition). } Let $\Omega$ and $\Omega'$ be open connected regions in $\mathbb{C}$. We say that a map $g: \Omega \to \Omega'$ is conformal if it is holomorphic and invertible with $g^{-1}$ holomorphic. 
+    \item \textbf{Conformal Automorphisms. } We call a conformal map $g: \Omega \to \Omega$ a conformal automorphism and write $\Aut(\Omega)$ to denote the collection of automorphisms (strictly conformal) on $\Omega$. 
+    \item \textbf{De Moivre's Formula. } If $z = r(\cos\theta + i\sin\theta)$ and $n \in \mathbb{Z}_{>0}$, then $z^n = r^n(\cos n\theta + i\sin n\theta)$. 
+    \item \textbf{Theorem (Extreme Value Theorem). } If $K$ is compact and $f: K \to \mathbb{R}$ is continuous, then $f$ attains its minimum and maximum. 
+    \item \textbf{Stereographic Projection / Riemann Sphere. } Identify the plane $\overline{\mathbb{C}} = S^2 = \{(x,y,z) \in \mathbb{R}^3 \mid x^2 + y^2 + z^2 = 1\}$. If $f: \mathbb{C} \to S^2 \setminus \{N\}$, then we have $(u,v) \mapsto \frac{1}{1 + u^2 + v^2}(2u,2v,-1 + u^2 + v^2)$ is a homeomorphism (is continuous with continuous inverse) $f^{-1}: S^2 \setminus \{N\} \to \mathbb{C}$ with $(x,y,z) \mapsto \left(\frac{x}{1-z}, \frac{y}{1-z}\right)$. 
+    \item \textbf{Prop. (Uniform Convergence). } If $f_n \to f$ uniformly and each $f_n$ is continuous, then $f$ is continuous. 
+    \item \textbf{Theorem. } $\cos z = \frac{e^{iz} + e^{-iz}}{2}$ and $\sin z = \frac{e^{iz} - e^{-iz}}{2i}$. 
+    \item \textbf{Properties of $e$. } Let $x,y \in \mathbb{R}$ and $z,w \in \mathbb{C}$. Then: 
+    \begin{enumerate}
+        \item $e^{z + w} = e^ze^w$. 
+        \item $|e^{x + iy}| = |e^xe^{iy}| = |e^x||e^{iy}| = e^x$. 
+        \item $\arg(e^{x + iy}) = y \Mod{2\pi}$. 
+        \item $e^z \neq 0$ for all $z \in \mathbb{C}$. 
+        \item $e^z = 1$ iff $z = 2\pi in$ for some $n \in \mathbb{Z}$. 
+        \item $e^z = e^{z + 2\pi ni}$. 
+    \end{enumerate} 
+    \item \textbf{Prop. } Let $f: \Omega \to \mathbb{C}$ be holomorphic. Then $f: \Omega \to \mathbb{R}^2$ is real differentiable at all $(x,y) \in \Omega$. 
+    \item \textbf{Cauchy-Riemann Equations. } Let $\Omega$ be an open set in $\mathbb{C}$ and let $f: \Omega \to \mathbb{C}$ be given by $f(x,y) = u(x,y) + iv(x,y)$. Then: 
+    \begin{enumerate}
+        \item $f'(z)$ exists at $z \in \Omega$ iff $f$ is real differentiable and $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$ and $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$ (these are the Cauchy-Riemann equations). 
+        \item $f(z)$ is holomorphic on $\Omega$ iff partials are continuous and satisfy the CR equations. 
+        \item If $f'(z_0)$ exists, then $f'(z_0) = \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x} = \frac{\partial f}{\partial x} = \frac{\partial u}{\partial y} - i\frac{\partial v}{\partial y} = \frac{1}{i}\frac{\partial f}{\partial y}$. 
+    \end{enumerate}
+    \item \textbf{Inverse Function Theorem for $\mathbb{R}^2$. } If $f: \Omega \to \mathbb{R}^2$ is continuously differentiable and the Jacobian $Df(z_0)$ has $\det(Df(z_0)) \neq 0$, then there are neighborhoods $U \ni z_0$ and $V \ni f(z_0)$ such that $f: U \to V$is bijective with continuously differentiable $f^{-1}: V \to U$ such that $Df^{-1}(z_0) = [Df(z_0)]^{-1}$, which is the inverse matrix of $Df(z_0)$. 
+    \item \textbf{Inverse Function Theorem for $\mathbb{C}$. } Let $f: \Omega \to \mathbb{C}$ be holomorphic (with continuous $f'(z_0)$), and $f'(z) \neq 0$ for some $z_0 \in \Omega$. Then there exists a neighborhood $U \ni z_0$ and $V \ni f(z_0)$ such that $f: U \to V$ is bijective with holomorphic inverse $f^{-1}: V \to U$ such that for all $z_0 \in U$, $\frac{d}{dw} f^{-1}(w) = \frac{1}{f'(w)}$ with $w = f(z)$. 
+    \item \textbf{Prop. } Pick a branch $[a, a+2\pi)$. Then $\log z: \mathbb{C} \setminus \{0\} \to \mathbb{R} \times i[a, a + 2\pi)$ is the inverse of $\exp: \mathbb{R} \times i[a, a+2\pi) \to \mathbb{C}$. 
+    \item \textbf{Prop. } If $z_1,z_2 \in \mathbb{C} \setminus \mathbb{R}_{\leq 0}$, then $\log(z_1z_2) = \log z_1 + \log z_2 \Mod{2\pi i}$. 
+    \item \textbf{Prop. } By choosing different branches of log, we have the following: 
+    \begin{enumerate}
+        \item $a^b$ is independent of the branch iff $b \in \mathbb{Z}$. 
+        \item $a^b$ takes on exactly $q$ different values iff $b \in \mathbb{Q}$, so $b = \frac{p}{q}$ (with $p,q$ coprime). 
+        \item $a^b$ takes on infinitely many values iff $b$ is irrational or $\textrm{Im}(b) \neq 0$. 
+    \end{enumerate}
+    \item \textbf{Cor. } Choose a branch of log. Then the $n$th root function is given by $z^{1/n} = e^{\log (z/n)}$, where the $n$th root function has $n$ branches. 
+    \item \textbf{Prop. } Let $a,b \in \mathbb{C}$. Then: 
+    \begin{enumerate}
+        \item For any choice of branch of log, the function $\mapsto a^z$ is holomorphic on $\mathbb{C}$, and $z \mapsto (\log a) a^z$. 
+        \item Choose a branch of log. Then the function $z \mapsto z^b$ is holomorphic on the domain of log with derivative $z \mapsto bz^{b-1}$. 
+    \end{enumerate}
+    \item \textbf{Prop. (Re-parametrization). } If $\tilde{\gamma}$ is a re-parametrization of $\gamma$, then $\int_{\gamma} f = \int_{\tilde{\gamma}} f$ for any continuous $f$ on $\Omega$. 
+    \item \textbf{Fundamental Theorem of Line Integrals. } Let $F: \Omega \to \mathbb{C}$ be holomorphic on an open $\Omega$ and let $\gamma: [0,1] \to \Omega$ be piecewise smooth. Then, $\int_{\gamma} F'(z) dz = F(\gamma(1)) - F(\gamma(0))$. 
+    \item \textbf{Path-independence and Primitives Theorem. } Let $f: \Omega \to \mathbb{C}$ be continuous and $\Omega$ is open and connected. Then, TFAE: 
+    \begin{enumerate}
+        \item (path-independence) if $z_0, z_1 \in \Omega$, then any paths $\gamma, \tilde{\gamma}$ with shared endpoints $\gamma(0) = \tilde{\gamma}(0)$ and $\gamma(1) = \tilde{\gamma}(1)$ have $\int_{\gamma} f(z) dz = \int_{\tilde{\gamma}} f(z) dz$. 
+        \item (integral along loops is 0) if $\Gamma$ is a loop, with $\Gamma(1) = \Gamma(0)$, then $\int_{\Gamma} f(z) dz = 0$. 
+        \item (f has a primitive) There is a primitive $F$ for $f$ on $\Omega$.  
+    \end{enumerate}
+    \item \textbf{Cauchy-Goursat Theorem. } Let $f: \Omega \to \mathbb{C}$ be holomorphic on $\Omega$, simply connected, and open. Then for any loop $\Gamma \subseteq \Omega$, $\int_{\Gamma} f(z) dz = 0$. 
+    \item \textbf{Prop. } If $f(x+iy) = u(x,y) + iv(x,y)$, then $\int_{\gamma} f = \int_{\gamma} udx - vdy + i\int_\gamma u dx + vdy$. 
+    \item \textbf{Deformation Theorem. } Suppose $f$ is holomorphic on an open set $\Omega$ and $\gamma_0, \gamma_1$ are piecewise continuously differentiable. Then there are continuously differentiable curves in $\Omega$. Then: 
+    \begin{enumerate}
+        \item If $\gamma_0, \gamma_1$ are paths from $z_0$ to $z_1$, which are homotopic in $\Omega$, then $\int_{\gamma_0} F = \int_{\gamma_1} F$. 
+        \item If $\gamma_0, \gamma_1$ are loops homotpic in $\Omega$, then $\int_{\gamma_0} F = \int_{\gamma_1} F$. 
+    \end{enumerate}
+    \item \textbf{Cor. } If $\Omega$ is simply connected, then every loop $\gamma$ has $\int_\gamma f dz = 0$. 
+    \item \textbf{Cor. } Let $f: \Omega \to \mathbb{C}$ be holomorphic on a simply connected oen set $\Omega$. Then, $f$ has a primitive $F$ on $\Omega$ (unique up to constants). 
+    \item \textbf{Winding number (as an index). } Let $\gamma: [a,b] \to \mathbb{C}$ (a piecewise continuous) loop and $z \notin \gamma([a,b])$. Then, the winding number of $\gamma$ around $z_0$ is an integer. 
+    \item \textbf{Cauchy's Integral Formula. } Let $f$ be holomorphic on $\Omega$ and $\gamma$ a loop in $\Omega$ hommotopic to a point. Let $z_0 \in \Omega$ but $z_0 \notin \gamma$. Then, 
+    $$
+    f(z_0) \cdot I(\gamma, z_0) = \frac{1}{2\pi i} \cdot \int_\gamma \frac{f(z)}{z-z_0} dz. 
+    $$
+    \item \textbf{Cauchy's Integral Formula for Derivatives. } Let $f$ be holomorphic on $\Omega$. Then $f$ is infinitely differentiable (complex) and if $\gamma$ is a loop homotopic to a point (simple loop) $I(\gamma, z_0) = 1$, then: 
+    $$
+    f^{(n)}(z_0) = \frac{n}{2\pi i} \int_\gamma \frac{f(\xi)}{(\xi - z_0)^{n+1}} d\xi. 
+    $$
+    \item \textbf{Cor. } \textbf{Cauchy-Type Integrals. } Let $\gamma$ be a loop $\gamma: [a,b] \to \mathbb{C}$ and $g$ a continuous function on $\gamma$. Set $\tilde{g}(z) := \int_\gamma \frac{g(\xi)}{\xi - z} d\xi$. Then, $\tilde{g}(z)$ is holomorphic inside $\gamma$ and so $\tilde{g}(z)$ is infinitely differentiable. 
+    \item \textbf{Prop. (Cauchy Inequalities). } Let $f$ be holomorphic on $\Omega$ and let $\overline{D_R(z_0)} \subseteq \Omega$ with boundary $\gamma$. Suppose $f(z)$ is bounded above $|f(z)| \leq M$ for all $z \in \gamma$. Then for all $k=1,2,\dots$, the $k$th derivative is also upper bounded with $|f^{(k)}(z_0)| \leq \frac{k_i}{R^k}M$. 
+    \item \textbf{Louisville's Theorem. } If $f$ is entire and bounded (i.e. there exists an $M \in \mathbb{R}_{>0}$ with $|f(z)| \leq M$ for all $z \in \mathbb{C}$), then $f$ is constant. 
+    \item \textbf{Morera's Theorem. (partial converse to Cauchy-Goursat)} Let $f$ continuous on an open $\Omega$ and suppose that $\int_\gamma f = 0$ for every loop in $\Omega$. Then, $f$ is holomorphic on $\Omega$ and $f$ has a primitive $F$ on $\Omega$. 
+    \item \textbf{Cor. to Morera's Theorem (Removable Singularities Theorem). } Let $f$ be continuous on an open $\Omega$ in $\mathbb{C}$ and holomorphic on $\Omega \setminus \{z_0\}$, with $z_0 \in \mathbb{C}$. Then, $f$ is holomorphic on $\Omega$. 
+    \item \textbf{Another Cor. to Morera's Theorem. } If $f$ is holomorphic on $\Omega \setminus \{z_0\}$ and bounded on a neighborhood of $z_0$, there is unique holomorphic extension $\tilde{f}$ of $f$ to $\gamma$ defined by $\tilde{f}(z) = f(z)$ if $z \neq z_0$ and $\tilde{f}(z) = \lim_{z \to z_0} f(z)$ if $z = z_0$. 
+    \item \textbf{Mean Value Property. } Let $f$ be holomorphic on $\overline{D_R(z_0)}$. Then $f(z_0) = \frac{1}{2\pi} \int_{0}^{2\pi} f(z_0 + re^{i\theta}) d\theta$. 
+    \item \textbf{Maximum Modulus Principle. } Let $A$ be an open, connected, bounded set in $\mathbb{C}$ and suppose $f: \overline{A} \to \mathbb{C}$ is holomorphic on $A$ and continuous on $\overline{A}$. Then $|f|$ has a finite maximum value on $\overline{A}$ which is achieved on $\partial A$. IF $|f|$ is attained in $A$, then $f$ is constant. 
+    \item \textbf{Prop. } Let $u: \Omega \to \mathbb{R}$ be an twice-continuous harmonic function on an open set $\Omega \subseteq \mathbb{C}$. Then $u$ is infinitely differentiable, so $u$ is $C^\infty$, and in the neighborhood $U$ of $z_0 \in \Omega$, there exists a holomorphic function $f: U \to \mathbb{C}$ such that $u = \textrm{Re}(f)$. 
+    \item \textbf{Dirichlet Problem. } $\Delta u = 0$, $u \mid_{\partial \Omega} (\theta) = g(\theta)$. Let $u,\tilde{u}$ solve the Dirichlet Problem. Then, $u = \tilde{u}$, so the solution to the Dirichlet Problem is unique. Solution given by: 
+    $$
+    u(re^{i\phi}) = \frac{1}{2\pi} \int_{0}^{2\pi} u(Re^{i\theta}) \cdot \frac{R^2 - r^2}{|Re^{i\theta} - re^{i\theta}|} d\theta. 
+    $$
+    \item \textbf{Analytic Convergence Theorem. } Let $f_n: \Omega \to \mathbb{C}$ be a sequence of holomorphic functions. If $f_n \to f$ uniformly on every closed disk in $\Omega$, then: 
+    \begin{enumerate}
+        \item $f$ is holomorphic on $\Omega$. 
+        \item $f_n'$ converges to $f'$ uniformly on every closed disk, and pointwise on $\Omega$. 
+    \end{enumerate} 
+    \item \textbf{Prop. } Let $\gamma: [a,b] \to \Omega$ be a contour and $f_n: \gamma([a,b]) \to \mathbb{C}$ be a sequence of continuous functions. If $f_n \to f$ uniformly on $\gamma([a,b])$, then $\int_\gamma f_n \to \int_\gamma f$. 
+    \item \textbf{Prop. } If $f$ is holomorphic on an open, connected set $\Omega$ and the zero set $\{z \in \Omega \mid f(z) = 0\}$ contains a limit point, then $f=0$ on $\Omega$. 
+    \item \textbf{Cor. (Identity Theorem). } Let $f,g$ be holomorphic on an open, connected $\Omega$ and $f(z)=g(z)$ for a set of $z$ with a limit point in $\Omega$. Then, $f=g$ on $\Omega$. 
+    \item \textbf{Cor. (Zeros are Isolated). } If $f$ is holomorphic on $\Omega$, and not identically zero on $\Omega$, then for any zero $z_0$ of $f$, there is a deleted neighborhood $U \setminus \{z_0\}$ on which $f(z) \neq 0$ for all $z \in U \setminus \{z_0\}$. 
+    \item \textbf{Cor. (Analytic Continuation). } If $f$ is holomorphic on an open, connected set $\Omega$ and $f_+$ is holomorphic on an open connected $\Omega_+ \supseteq \Omega$ with $f_+ = f$ on $\Omega$, then $f_+$ is the unique such extension, i.e. if there exists another such extension, $\tilde{f}_+$, then $\tilde{f}_+ = f_+$. 
+    \item \textbf{Lemma. } Let $f: \Omega \to \mathbb{C}$ be holomorphic, not identically 0, with a zero $z_0$. Then in a neighborhood $U$ of $z_0$, we may write $f(z) = (z-z_0)^mg(z)$ for all $z \in U$, where $g(z) \neq 0$ and $m$ is unique. 
+    \item \textbf{Lemma. } A function $f$ has a pole of order $m$ at $z_0$ iff there is a neighborhood $U$ of $z_0$ on which $f(z) = (z-z_0)^{-m}g(z)$ for all $z \in U \setminus \{z_0\}$ with a nonzero $g(z)$ and $g$ holomorphic on $U$. 
+    \item \textbf{Theorem. } If $f$ has a pole of order $m$ at $z_0$, then it can be represented uniquely as: 
+    $$
+    f(z) = \frac{a_{-m}}{(z-z_0)^m} + \frac{a_{-m+1}}{(z-z_0)^{m-1}} + \dots + \frac{a_{-1}}{z-z_0} + G(z)
+    $$ where $G(z)$ is holomorphic on a neighborhood $U$ of $z_0$ and $a_{-m}, \dots, a_{-1} \in \mathbb{C}$ with $a_{-m} \neq 0$. 
+    \item \textbf{Residue Theorem, Simple Closed Loops. } Let $\Omega$ be open, connected and $\gamma$ a simple loop homotopic to a point in $\Omega$. Let $f$ be a function $f: \Omega \to \mathbb{C}$ be holomorphic except at a finite set of points $z_1, \dots, z_N$ inside $\gamma$. Then, $\int_\gamma f(z) dz = 2\pi i \sum_{k=1}^{N}\Res_{z_k}(f)$. 
+    \item \textbf{Laurent Series Theorem. } Let $C_1, C_2$ be two circles centered at $z_0$ (it is fine if $C_1 = \{z_0\}$ and $C_2$ "encloses" $\mathbb{C}$). Call $R$ the region the annulus between $C_1$ and $C_2$. Let $f$ be holomorphic on $R$. Then $f$ can be expanded uniquely as a (absolutely) convergent power series in $R$ by: 
+    $$
+    f(z) = \sum_{n=1}^{\infty} \frac{a_{-n}}{(z-z_0)^n} + \sum_{n=0}^{\infty}a_n(z-z_0)^n. 
+    $$ where the first infinite series is called the principal part and second one is called the Taylor series / holomorphic part. 
+    \item \textbf{Casorati-Weierstrauss Theorem. } If $f$ is holomorphic in a deleted $D_r(z_0) \setminus \{z_0\}$ and has an essential singularity at $z_0$, then the image of $f\left(D_r(z_0) \setminus \{z_0\}\right)$ is dense in $\mathbb{C}$. 
+    \item \textbf{Prop. (Fourier Transform). } Let $f: \mathbb{R} \to \mathbb{R}$ be a real function. The Fourier Transform of $f$ is the function $\hat{f}: \mathbb{R} \to \mathbb{R}$ given by $\hat{f}(k) = \int_{-\infty}^{\infty}f(x) \cdot e^{-ikx} dx$. 
+    \item \textbf{Jordan's Lemma. } $\int_{0}^{\pi} e^{-R\sin\theta} d\theta \leq \frac{\pi}{R}$. 
+    \item \textbf{Argument Principle. } Let $f: \Omega \to \mathbb{C}$ be meromorphic and $\gamma$ a simple loop in $\Omega$ bounding a simply connected region $R_\gamma$, with $\overline{R_\gamma} \subseteq \Omega$. Let $f$ have no zeros or poles on $\gamma$. Then: 
+    $$
+    \frac{1}{2\pi i} \int_{\gamma} \frac{f'(z)}{f(z)} dz = N - P
+    $$ where $N$ is the number of zeros of $f$ inside $R_\gamma$ (counting multiplicity) and $P$ is the number of poles of $f$ inside $R_\gamma$ (counting multiplicity). 
+    \item \textbf{Rouche's Theorem. } Let $f,g: \Omega \to \mathbb{C}$ be holomorphic and let $\gamma$ be a simple loop bounding a simply connected open $U$, with $\overline{U} \subseteq \Omega$. If $|f(z)| > |g(z)|$ on $\gamma$, then $f$ and $f+g$ have the same number of zeros inside $U$. 
+    \item \textbf{Open-Mapping Theorem. } Any nonconstant holomorphic function is an open map, meaning it maps open sets to open sets. 
+    \item \textbf{Lemma. (Local Injectivity). } Let $f: \Omega \to \mathbb{C}$ be holomorphic and $z_0 \in \Omega$. If $f'(z_0) \neq 0$, then $f$ is locally injective near $z$. 
+    \item \textbf{Theorem. } If $g: \Omega \to \mathbb{C}$ is holomorphic and $\Omega$ is simply connected, and $g \neq 0$, there exists a holomorphic function $F: \Omega \to \mathbb{C}$ satisfying $e^{F(z)} = g(z)$, where $F(z)$ is unique up to $2\pi ik$, with $k \in \mathbb{Z}$. 
+    \item \textbf{Theorem (Local description of holomorphic). } Let $f: \Omega \to \mathbb{C}$ be holomorphic, $\Omega$ open. Let $z_0 \in \Omega$ and let $k \geq 1$ denote the order of the zero $f(z) - f(z_0)$ at $z_0$. Then, there exists an open neighborhood $U$ of $z_0$ (and $r>0$) and a function $\phi: U \to D_r(z_0)$ such that: 
+    \begin{enumerate}
+        \item $\phi$ is holomorphic with a holomorphic inverse. 
+        \item $\phi(z_0) = 0$. 
+        \item We have $f(z) = f(z_0) + (\phi(z))^k$ with $z \in U$. 
+    \end{enumerate}
+    \item \textbf{Prop. } Let $\{a_n\}_{n=1}^{\infty}$ be a sequence of complex numbers. If $\sum_{n=1}^{\infty}|a_n| < \infty$, then $\prod_{n=1}^{\infty}(1+a_n)$ converges and its value is 0 iff one of the $1+a_n$ factors is zero. 
+    \item \textbf{Prop. } Let $\{f_n\}_{n=1}^{\infty}$ be a sequence of holomorphic functions on $\Omega$. If $\sum_{n=1}^{\infty}|f_n|$ converges uniformly on compact subsets of $\Omega$, then so does $\prod_{n-1}^{\infty}(1 + f_n(z))$. Moreover, the limiting function is holomorphic and nonzero everywhere except at points $z$ such that $1 + f_n(z) = 0$ (for some $n$). 
+    \item \textbf{Prop. (Partial fractions expansion for log derivatives). } Same assumptions as the above proposition. Then, the log derivative of product = sum of log derivatives. i.e. 
+    $$
+    \frac{\left(\prod_{n=1}^{\infty}(1+f_n)\right)'}{\prod_{n=1}^{\infty}(1+f_n)} = \sum_{n=1}^{\infty} \frac{f_n'}{1 + f_n}. 
+    $$
+    \item \textbf{Cor. } $\sin(\pi z) = \pi z \cdot \prod_{n=1}^{\infty} (1 - \frac{z}{n})(1 + \frac{z}{n})$ for $z \in \mathbb{C}$, $\cos(\pi z) = \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{\left(n - \frac{1}{2}\right)^2}\right)$, $e^z - 1 = ze^{z/2} \cdot \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{4\pi^2n^2}\right)$, and $\pi\cot(\pi z) = \frac{1}{z} + \sum_{n=1}^{\infty} \frac{2z}{z^2 - n^2}$ (for the contangent expression, $z \in \mathbb{C} \setminus \mathbb{Z}$). 
+    \item \textbf{Theorem (Schwarz Reflection Principle). } Let $A$ be a region in the upper-half plane with $\partial A \cap \mathbb{R}$ nonempty and containing $[a,b] \subseteq \mathbb{R}$. Let $f$ be holomorphic on $A$ and continuous on $\partial A \cap [a,b]$ and real on $[a,b]$. Then $f$ can be uniquely extended to a holomorphic function on $A \cup (a,b) \cup A_{\textrm{ref}}$, where $A_{\textrm{ref}} = \{\overline{z} \mid z \in A\}$ with $f(z) = \overline{f(\overline{z})}$ for all $z \in A_{\textrm{ref}}$. 
+    \item \textbf{Theorem (Gamma Function). } There is a unique $\Gamma(s)$ with the following: 
+    \begin{enumerate}
+        \item $\Gamma(s)$ is meromorphic. 
+        \item (Factorial). $\Gamma(n+1) = n!$ for $n=0,1,2,\dots$. 
+        \item (Special Value). $\Gamma(\frac{1}{2}) = \sqrt{\pi}$. 
+        \item (Integral Representation). $\Gamma(s) = \int_{0}^{\infty} e^{-x} x^{s-1} dx$ (for $\textrm{Re}(s) > 0$). 
+        \item (Infinite Product Representation). $\Gamma(s) = s^{-1}e^{\gamma s} \prod_{n=1}^{\infty} \left(1 + \frac{s}{s}\right)^{-1} e^{s/n}$ where $\gamma = \lim_{n \to \infty} \left(\frac{1}{1} + \frac{1}{2} + \dots + \frac{1}{n} - \log n\right) \approx 0.58...$ (Euler-Mascheroni constant) (for $s \in \mathbb{C}$, except poles). 
+        \item (Limit of finite products). $\Gamma(s) = \lim_{n \to \infty} \frac{n! n^s}{s(s+1)\dots(s+n)}$ (for $s \in \mathbb{C}$, except poles). 
+        \item (Zeros). $\Gamma(s)$ has no zeros. 
+        \item (Poles). $\Gamma(s)$ has poles at nonpositive integers $s=0,-1,-2,\dots$ and is holomorphic everywhere else. At $s=-n$, the pole is simple and $\Res_{-n}(\Gamma) = -\frac{1}{n!}$. 
+        \item (Functional Equation). $\Gamma(s+1) = s\Gamma(s)$ (for $s \in \mathbb{C}$, except at poles). 
+        \item (Reflection Formula). $\Gamma(s)\Gamma(1-s) = \frac{\pi}{\sin(\pi s)}$ (for $s \in \mathbb{C}$, except at poles). 
+    \end{enumerate}
+    \item \textbf{Cor. } Holomorphic $f$ is locally injective iff $f'(z_0) \neq 0$.  
+    \item \textbf{Conformal Equivalence Classes. } These are the following: 
+    \begin{enumerate}
+        \item Complex plane, $\mathbb{C}$. 
+        \item Punctured plane, $\mathbb{C} \setminus \{0\}$. 
+        \item Unit disk, $D_1(0)$. 
+        \item Upper-half plane, $\mathbb{H} = \{z \in \mathbb{C} \mid \textrm{Im}(z) > 0\}$. 
+        \item $\textrm{Riemann sphere}^*$, $\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}$ (not a subset of $\mathbb{C}$ but we can still talk about holomorphic/meromorphic functions on it). 
+        \item The slit plane, $\mathbb{C} \setminus \mathbb{R}_{\leq 0}$. 
+        \item Strip (similar to critical region from Riemann hypothesis). 
+        \item Rectangle. 
+        \item Annulus. 
+        \item Blob
+    \end{enumerate}
+    \item \textbf{Prop. } If $g: \Omega \to \Omega'$ is holomorphic and invertible, then $g^{-1}$ is holomorphic (i.e. $g$ is conformal). 
+    \item \textbf{Lemma. } $\Aut(\Omega)$ is a group, with function composition. In other words, let $f,g,h \in \Aut(\Omega)$. Then: 
+    \begin{enumerate}
+        \item $(g \circ f) \circ h = g \circ (f \circ h)$. 
+        \item If $g \in \Aut(\Omega)$, then $g^{-1} \in \Aut(\Omega)$. 
+        \item There is an identity map $\id \in \Aut(\Omega)$ such that $\id \circ g(z) = g(z) = g \circ \id(z) = g(z)$. 
+    \end{enumerate}
+    \item \textbf{Theorem. } Let $g: \mathbb{C} \to \Omega$ be a conformal map between $\mathbb{C}$ and a region $\Omega$. Then, $\Omega = \mathbb{C}$ and $g(z)$ is a conformal automorphism of the form $g(z) = az+b$, with $a \neq 0$ and $b \in \mathbb{C}$. 
+    \item \textbf{Theorem (Riemann Sphere). } Let $\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}$. If $g: \hat{\mathbb{C}} \to \Omega$ is a conformal map, then $\Omega = \hat{\mathbb{C}}$ and $g$ is a conformal automorphism, with $g(z) = \frac{az+b}{cz+d}$ with $a,b,c,d \in \mathbb{C}$ (i.e. $g$ is a Möbius transformation). 
+\end{enumerate}
+
+\end{spacing}
+\end{multicols}
+
+}
+
+\end{document}
