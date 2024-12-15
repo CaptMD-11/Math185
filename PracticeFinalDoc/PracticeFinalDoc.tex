@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+% \usepackage[left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage[linguistics]{forest}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{blindtext}
+% \usepackage[cal=esstix,frak=euler,scr=boondox,bb= pazo]{mathalfa}
+% the following 2 packages are used for changing the font. 
+% \usepackage{mathptmx}
+% \usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{multicol}
+\graphicspath{{./images/}}
+\allowdisplaybreaks
+\allowbreak
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3's }#1}
+\theoremstyle{named}
+\newtheorem*{namedconjecture}{Distinct Factorizations Conjecture}
+\newtheorem{conjecture}{Conjecture}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\id}{id}
+\newcounter{customDef}
+\renewcommand{\thecustomDef}{\arabic{customDef}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+% the following line is for the omission of the title
+\pagestyle{empty}
+\begin{document}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $z=1 + \left(\cos\left(\frac{\pi k}{8} + i\sin\left(\frac{\pi k}{8}\right)\right)\right)$ for $k=0,1,2,3$. 
+        \item $\exp(3\log 2 - \frac{\pi}{2} + i(\frac{3\pi}{2} + \log 2))$. 
+        \item 0. 
+    \end{enumerate}
+    \item True; first use definition of uniform convergence, then with upper-bound considerations, use ratio test to see $\sum \frac{\sqrt{n} \cdot 2^n}{n!}$ converges absolutely on $\overline{D_2(0)}$. By Cauchy Criterion for infinite, series, the result follows. 
+    \item 
+    \begin{enumerate}
+        \item Not entire; write $u(x,y) = x^2 + y^2$ and $v(x,y) = 0$ and look at the Cauchy-Riemann equations. 
+        \item Not entire; Cauchy-Riemann equations are not satisfied. 
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item (DRAWINGS). 
+        \item $S$ is compact; $S$ is bounded and closed, so by Heine-Borel, $S$ is compact. 
+        \item Consider $f_M(z) = z + 3$, where $M = \begin{pmatrix}
+            1 & 3 \\
+            0 & 1
+        \end{pmatrix}$ and $\det M = 1 \neq 0$. 
+    \end{enumerate}
+    \item $\frac{2\pi \cdot 16}{5}$. 
+    \item Seek to use Louisville's theorem, but not sure on how to show that $|f|$ is bounded. 
+    \item this follows from maximum modulus principle. 
+    \item Use Rouche's theorem (try to use maximum modulus principle to show $|f(z)| < 1$ on the unit circle?). 
+    \item Gamma function $(\Gamma)$? 
+    \item $-\frac{\pi}{5}$ (hopefully my arithmetic is correct). 
+\end{enumerate}
+
+\end{document}
